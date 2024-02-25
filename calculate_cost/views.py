@@ -302,7 +302,7 @@ def calculate_cost(request):
     amount=request.GET.get('amount')
     # l=request.GET.get('L')
     # print(pickup)
-    if(pickup not in dict.keys() and delivery not in dict.keys()):
+    if(pickup not in dict.keys() or delivery not in dict.keys()):
         print("Enter Valid pincode")
         messages.info(request,'Enter Valid pincode!')
         return render(request,'calculate_cost.html')
