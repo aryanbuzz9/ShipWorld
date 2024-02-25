@@ -1,0 +1,379 @@
+{% load static %}
+<html lang="en" class="overflow-hidden"><head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="./favico.png">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  
+    
+    <!--MoEngage Prod-->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-JK35HE785X&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-GQQJ7B1NE5&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=AW-745560309&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-27886886-9&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-KHZHDD92"></script><script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script>
+   
+    <script async="" src="https://cdn.moengage.com/webpush/moe_webSdk.min.latest.js"></script><script type="text/javascript">
+      ; (function (i, s, o, g, r, a, m, n) {
+        i.moengage_object = r
+        t = {}
+        q = function (f) {
+          return function () {
+            ; (i.moengage_q = i.moengage_q || []).push({ f: f, a: arguments })
+          }
+        }
+          ; (f = [
+            'track_event',
+            'add_user_attribute',
+            'add_first_name',
+            'add_last_name',
+            'add_email',
+            'add_mobile',
+            'add_user_name',
+            'add_gender',
+            'add_birthday',
+            'destroy_session',
+            'add_unique_user_id',
+            'moe_events',
+            'call_web_push',
+            'track',
+            'location_type_attribute',
+          ]),
+            (h = { onsite: ['getData', 'registerCallback'] })
+        for (k in f) {
+          t[f[k]] = q(f[k])
+        }
+        for (k in h)
+          for (l in h[k]) {
+            null == t[k] && (t[k] = {}), (t[k][h[k][l]] = q(k + '.' + h[k][l]))
+          }
+        a = s.createElement(o)
+        m = s.getElementsByTagName(o)[0]
+        a.async = 1
+        a.src = g
+        m.parentNode.insertBefore(a, m)
+        i.moe =
+          i.moe ||
+          function () {
+            n = arguments[0]
+            return t
+          }
+        a.onload = function () {
+          if (n) {
+            i[r] = moe(n)
+          }
+        }
+      })(
+        window,
+        document,
+        'script',
+        'https://cdn.moengage.com/webpush/moe_webSdk.min.latest.js',
+        'Moengage'
+      )
+
+      Moengage = moe({
+        app_id: 'X7L72DH74G0QO5Q5AMUWW5UN',
+        debug_logs: 0,
+        cluster: 'DC_3',
+        enableSPA: true,
+        swPath: '/serviceworker.js',
+      })
+    </script>
+    <!-- End MoEngage Prod-->
+
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments)
+        }
+
+        if (!f._fbq) f._fbq = n
+        n.push = n
+        n.loaded = !0
+        n.version = '2.0'
+
+        n.queue = []
+        t = b.createElement(e)
+        t.async = !0
+
+        t.src = v
+        s = b.getElementsByTagName(e)[0]
+
+        s.parentNode.insertBefore(t, s)
+      })(
+        window,
+        document,
+        'script',
+
+        'https://connect.facebook.net/en_US/fbevents.js'
+      )
+    </script>
+
+    <script>
+        (function (m, a, z, e) {
+          var s, t;
+          try {
+            t = m.sessionStorage.getItem('maze-us');
+          } catch (err) { }
+
+          if (!t) {
+            t = new Date().getTime();
+            try {
+              m.sessionStorage.setItem('maze-us', t);
+            } catch (err) { }
+          }
+
+          s = a.createElement('script');
+          s.src = z + '?apiKey=' + e;
+          s.async = true;
+          a.getElementsByTagName('head')[0].appendChild(s);
+          m.mazeUniversalSnippetApiKey = e;
+        })(window, document, 'https://snippet.maze.co/maze-universal-loader.js', 'd0f6ac4f-ef79-482e-b620-c8a55ee5af8e');
+    </script><script src="https://snippet.maze.co/maze-universal-loader.js?apiKey=d0f6ac4f-ef79-482e-b620-c8a55ee5af8e" async=""></script>
+
+    <noscript>
+      <img height="1" width="1" style="display: none"
+        src="https://www.facebook.com/tr?id=3234053470194493&ev=PageView&noscript=1" />
+    </noscript>
+
+    <!-- End Meta Pixel Code -->
+
+    <!-- LinkedIn -->
+    <script type="text/javascript">
+      _linkedin_partner_id = '4924852'
+      window._linkedin_data_partner_ids =
+        window._linkedin_data_partner_ids || []
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id)
+    </script>
+    <script type="text/javascript">
+        ; (function (l) {
+          if (!l) {
+            window.lintrk = function (a, b) {
+              window.lintrk.q.push([a, b])
+            }
+            window.lintrk.q = []
+          }
+          var s = document.getElementsByTagName('script')[0]
+          var b = document.createElement('script')
+          b.type = 'text/javascript'
+          b.async = true
+          b.src = 'https://snap.licdn.com/li.lms-analytics/insight.min.js'
+          s.parentNode.insertBefore(b, s)
+        })(window.lintrk)
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display: none" alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=4924852&fmt=gif" />
+    </noscript>
+    <!-- End of LinkedIn -->
+
+    <script>
+        ; (function (w, d, s, l, i) {
+          w[l] = w[l] || []
+          w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : ''
+          j.async = true
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+          f.parentNode.insertBefore(j, f)
+        })(window, document, 'script', 'dataLayer', 'GTM-KHZHDD92')
+    </script>
+
+    
+      
+
+          <!-- Salesforce -->
+
+          <script>
+            function getParam(p) {
+              var match = RegExp('[?&]' + p + '=([^&]*)').exec(window.location.search)
+              return match && decodeURIComponent(match[1].replace(/\+/g, ' '))
+            }
+
+            function getExpiryRecord(value) {
+              var expiryPeriod = 90 * 24 * 60 * 60 * 1000 // 90 day expiry in milliseconds
+
+              var expiryDate = new Date().getTime() + expiryPeriod
+              return {
+                value: value,
+                expiryDate: expiryDate,
+              }
+            }
+
+            function addGclid() {
+              var gclidParam = getParam('gclid')
+              var gclidFormFields = ['gclid_field', 'foobar'] // all possible gclid form field ids here
+              var gclidRecord = null
+              var currGclidFormField
+
+              var gclsrcParam = getParam('gclsrc')
+              var isGclsrcValid = !gclsrcParam || gclsrcParam.indexOf('aw') !== -1
+
+              gclidFormFields.forEach(function (field) {
+                if (document.getElementById(field)) {
+                  currGclidFormField = document.getElementById(field)
+                }
+              })
+
+              if (gclidParam && isGclsrcValid) {
+                gclidRecord = getExpiryRecord(gclidParam)
+                localStorage.setItem('gclid', JSON.stringify(gclidRecord))
+              }
+
+              var gclid = gclidRecord || JSON.parse(localStorage.getItem('gclid'))
+              var isGclidValid = gclid && new Date().getTime() < gclid.expiryDate
+
+              if (currGclidFormField && isGclidValid) {
+                currGclidFormField.value = gclid.value
+              }
+            }
+
+            window.addEventListener('load', addGclid)
+          </script>
+
+          <!-- End of Salesforce -->
+
+          <title>ShippingWorld</title>
+  <script  src="{% static 'register.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'register.css' %}">
+</head>
+
+<body>
+  <div id="app" data-v-app=""><div class="h-full" data-v-5d87e7ea=""><!--v-if--><div class="login-page-wrapper" data-v-bed35f00="" data-v-5d87e7ea=""><div class="content-wrapper" data-v-bed35f00=""><div class="login-page-logo w-full container m-auto" data-v-bed35f00=""><div class="logo-wrap" data-v-bed35f00=""></div></div><div class="banner container m-auto" data-v-bed35f00=""><div class="w-[59%] relative" data-v-bed35f00=""><img src="{% static '/images/create_banner.5fcb51b0.png'%}" class="banner-img" data-v-bed35f00=""><p class="banner-head" data-v-bed35f00="">Get your eCommerce Business Moving</p></div><div class="w-[41%] relative content-right-height" data-v-bed35f00=""><div class="content-right flex flex-col justify-center" data-v-bed35f00=""><div data-v-4b1419e2=""><header class="ucp-onboarding__form__header" data-v-4b1419e2="">Create your account</header><form class="ucp-onboarding__form__inputs" data-v-4b1419e2=""><!--v-if--><!--v-if--><div class="ap-input ucp-onboarding__form__inputs__input" data-v-4b1419e2=""><div class="ap-meta-label"><label><span class="label-container"><span class="label">Your name</span><!----><div class="flex-grow justify-between flex"><div></div><!----></div></span><div class="input-container"><div class="addon leading"><!----></div><div class="inline-input-container"><div class="inline-addon leading"><!----></div><input type="text" name="full-name" class="input" placeholder="Enter full name" default-value=""><div class="inline-addon trailing"><!----><!----><!----></div></div>
+    <div class="addon trailing"><!----></div></div></label><!----><!----></div></div><!--
+      <ap-input
+        v-model="first_name"
+        v-focus="{ el: 'input' }"
+        class="ucp-onboarding__form__inputs__input"
+        type="text"
+        name="full-name"
+        :label="t('onboarding.register.labels.first_name')"
+        :placeholder="t('onboarding.register.placeholders.first_name')"
+        :has-error="isFieldInvalid['first_name']"
+        :error-text="fieldErrors.first_name"
+      />
+     
+    <ap-input
+      v-model="last_name"
+      class="ucp-onboarding__form__inputs__input"
+      type="text"
+      name="full-name"
+      :label="t('onboarding.register.labels.last_name')"
+      :placeholder="t('onboarding.register.placeholders.last_name')"
+      :has-error="isFieldInvalid['last_name']"
+      :error-text="fieldErrors.last_name"
+    />
+    <ap-input
+      v-model="business_name"
+      class="ucp-onboarding__form__inputs__input"
+      type="text"
+      name="business-name"
+      :label="t('onboarding.register.labels.business_name')"
+      :placeholder="t('onboarding.register.placeholders.business_name')"
+      :has-error="isFieldInvalid['business_name']"
+      :error-text="fieldErrors.business_name"
+    /> --><div class="ap-input ucp-onboarding__form__inputs__input" data-v-4b1419e2=""><div class="ap-meta-label"><label><span class="label-container"><span class="label">Email</span><!----><div class="flex-grow justify-between flex"><div></div><!----></div></span><div class="input-container"><div class="addon leading"><!----></div><div class="inline-input-container"><div class="inline-addon leading"><!----></div><input type="email" name="email" class="input" placeholder="mail@example.com" default-value=""><div class="inline-addon trailing"><!----><!----><!----></div></div><div class="addon trailing"><!----></div></div></label><!----><!----></div></div><div class="ucp__inputs--mobile-number ucp-onboarding__form__inputs__input" data-v-2cf22c6b="" data-v-4b1419e2=""><div class="ap-input ucp__inputs--no-number-arrows" country="IND" required="true" unauthorized="true" maxlength="10" countrydisabled="true" data-v-2cf22c6b=""><div class="ap-meta-label"><label><span class="label-container"><span class="label">Phone Number</span><!----><div class="flex-grow justify-between flex"><div></div><!----></div></span><div class="input-container"><div class="addon leading"><div class="ap-select-menu qz_mobile_number_select_menu" data-v-2cf22c6b=""><div class="ap-meta-label"><label><span class="label-container has-no-label"><!----><!----><div class="flex-grow justify-between flex"><div></div><!----></div></span><div class="select-menu-group bottom-left"><button type="button" class="ap-menu-trigger-root w-full" tabindex="-1"><div class="ap-menu-trigger default disabled" aria-expanded="true" aria-haspopup="true" disabled="false"><div class="trigger-content"><!----><div class="selected-options-container">+91</div></div><!----><!----></div><!----><!----></button><div class="menu-container" style="display: none;"><div class="ap-menu menu bottom-left w-50 h-50 overflow-y-auto"><!----><ul class="scrollbar ap-menu-items"><li></li><li><button class="ap-menu-item selected" role="button" type="button"><div class="section"><div class="item-section"><!----><span class="text-container"><span class="text main">🇮🇳</span><span class="text"><span class="text-font-default-black" data-v-2cf22c6b="">+91 (IN) </span></span></span></div><div class="item-section"><span class="ap-icon selection-icon"><i class="fal fa-check"></i></span></div></div><div class="section"><!----></div></button></li><li></li></ul></div></div></div></label><!----><!----></div></div></div><div class="inline-input-container has-addon-leading"><div class="inline-addon leading"><!----></div><input type="text" name="phone" class="input" placeholder="Enter mobile number" default-value=""><div class="inline-addon trailing"><!----><!----><!----></div></div><div class="addon trailing"><!----></div></div></label><!----><!----></div></div></div><div class="ucp-onboarding__form__inputs__input ucp-onboarding__form__inputs__input--password-with-strength" data-v-4b1419e2=""><div class="ap-input" data-v-4b1419e2=""><div class="ap-meta-label"><label><span class="label-container"><span class="label">Password</span><!----><div class="flex-grow justify-between flex"><div></div><!----></div></span><div class="input-container"><div class="addon leading"><!----></div><div class="inline-input-container"><div class="inline-addon leading"><!----></div><input type="password" name="password" class="input" placeholder="Min 6 characters" default-value=""><div class="inline-addon trailing"><span class="ap-icon"><i class="fal fa-eye show-eye-icon"></i></span><!----><!----></div></div><div class="addon trailing"><!----></div></div></label><!----><!----></div></div><div aria-live="assertive" class="ucp-onboarding__form__password-strength" data-v-4b1419e2="" style="display: none;"><span class="ucp-onboarding__form__password-strength--0" data-v-4b1419e2="">The password is  weak. </span><span class="ucp-onboarding__form__password-strength__description" data-v-4b1419e2="">Try a longer password with numbers and special characters</span></div><div class="password-hints" aria-live="assertive" data-v-4b1419e2=""><div class="flex" data-v-4b1419e2=""><div class="body-body-one-liner text-font-label w-1/2" data-v-4b1419e2=""><span class="ap-icon mr-1 text-state-failure" data-v-4b1419e2=""><i class="fal fa-circle-xmark"></i></span> 6+ charcters</div><div class="body-body-one-liner text-font-label" data-v-4b1419e2=""><span class="ap-icon mr-1 text-state-failure" data-v-4b1419e2=""><i class="fal fa-circle-xmark"></i></span> upper and lowercase</div></div><div class="flex" data-v-4b1419e2=""><div class="body-body-one-liner text-font-label w-1/2" data-v-4b1419e2=""><span class="ap-icon mr-1 text-state-failure" data-v-4b1419e2=""><i class="fal fa-circle-xmark"></i></span> One special charcter</div><div class="body-body-one-liner text-font-label" data-v-4b1419e2=""><span class="ap-icon mr-1 text-state-failure" data-v-4b1419e2=""><i class="fal fa-circle-xmark"></i></span> One number</div></div></div></div><!-- <ap-input
+      v-model="confirm_password"
+      class="ucp-onboarding__form__inputs__input"
+      type="password"
+      name="confirm-password"
+      :label="t('onboarding.register.labels.confirm_password')"
+      :placeholder="t('onboarding.register.placeholders.confirm_password')"
+      :allow-show-password="true"
+      :has-error="isFieldInvalid['confirm_password']"
+      :error-text="fieldErrors.confirm_password"
+    /> --><div class="ap-meta-label mb-5" data-v-4b1419e2=""><label><span class="label-container has-no-label"><!----><!----><div class="flex-grow justify-between flex"><div></div><!----></div></span><!----></label><div class="ucp-onboarding__form__inputs__terms" data-v-4b1419e2=""><fieldset class="ap-checkbox" data-v-4b1419e2=""><label class="relative flex items-start cursor-pointer"><div class="flex items-center h-5"><input type="checkbox" class="checkbox" name="" true-value="true" false-value="false"></div><!----></label></fieldset><span class="text-[#525B7A]" data-v-4b1419e2="">By clicking on Create Account, you agree to ShipWorld's <a class="cursor-pointer" data-v-4b1419e2="">Terms &amp; Conditions</a> and <a class="cursor-pointer" data-v-4b1419e2="">Privacy Policy</a></span></div><!----></div><div class="inline-block w-full flex justify-center ucp-onboarding__form__inputs__input ucp-onboarding__form__inputs__input--button" data-v-4b1419e2=""><button class="w-full flex justify-center ucp-onboarding__form__inputs__input ucp-onboarding__form__inputs__input--button ap-button blue xl rounded filled w-full flex justify-center ucp-onboarding__form__inputs__input ucp-onboarding__form__inputs__input--button" type="button"><!---->Create Account<!----></button><!----></div></form><div class="border border-background-outlines-sections-dividers bg-[#F9F9FB] w-full p-3 rounded-lg" data-v-4b1419e2=""><div class="text-xs text-[#525B7A] text-center" data-v-4b1419e2="">Not looking for eCommerce shipping? Checkout</div><div class="flex justify-center gap-4 mt-2" data-v-4b1419e2=""><div class="flex py-0.5 px-2 rounded-md bg-white link-shadow cursor-pointer" data-v-4b1419e2=""><a href="#" target="_blank" data-v-4b1419e2=""><span class="ap-icon mr-1 text-cta-primary" data-v-4b1419e2=""><i class="fal fa-handshake"></i></span><span class="text-[#3D445C] text-sm font-medium" data-v-4b1419e2="">Franchise</span></a></div><div class="flex py-0.5 px-2 rounded-md bg-white link-shadow cursor-pointer" data-v-4b1419e2=""><a href="#" target="_blank" data-v-4b1419e2=""><span class="ap-icon mr-1 text-cta-primary" data-v-4b1419e2=""><i class="fal fa-suitcase"></i></span><span class="text-[#3D445C] text-sm font-medium" data-v-4b1419e2="">Jobs</span></a></div><div class="flex py-0.5 px-2 rounded-md bg-white link-shadow cursor-pointer" data-v-4b1419e2=""><a href="" target="_blank" data-v-4b1419e2=""><span class="ap-icon mr-1 text-cta-primary" data-v-4b1419e2=""><i class="fal fa-person-carry-box"></i></span><span class="text-[#3D445C] text-sm font-medium" data-v-4b1419e2="">Personal Courier</span></a></div></div></div><div class="ucp-onboarding__form__goto mt-5 !text-[#525B7A]" data-v-4b1419e2="">Already have an account? <a href="/login" class="" data-v-4b1419e2="">Login</a></div></div><!--v-if--><!-- header="Scheduled Maintenance: The portal will be temporarily unavailable from 11PM to 11:59 PM. Apologies for the inconvenience." --><!--v-if--></div></div></div><div class="ecomm container m-auto" data-v-bed35f00=""><div class="brands" data-v-bed35f00=""><p class="text-center mt-[2.92rem]" data-v-bed35f00=""><span class="brand-head" data-v-bed35f00=""> India’s eCommerce runs on ShipWorld<br data-v-bed35f00=""></span> Trusted by thousands of businesses </p><div class="wooden-box" data-v-bed35f00=""><img src="{% static '/images/wooden-table.83476035.png'%}" class="w-[33.537rem] m-auto" data-v-bed35f00=""></div></div><div class="offers" data-v-bed35f00=""><div data-v-bed35f00=""><span class="desc" data-v-bed35f00="">Start with as low as</span><span class="offer-head" data-v-bed35f00="">₹ 500</span></div><div data-v-bed35f00=""><span class="desc" data-v-bed35f00="">Minimum order Value</span><span class="offer-head" data-v-bed35f00="">NO</span></div><div data-v-bed35f00=""><span class="desc" data-v-bed35f00="">lower rates on Heavy Parcels</span><span class="offer-head" data-v-bed35f00="">50%</span></div><div data-v-bed35f00=""><span class="desc" data-v-bed35f00="">2 Day COD Remittance</span><span class="offer-head" data-v-bed35f00="">FREE</span></div></div></div><div class="text-center mt-5 container m-auto" data-v-bed35f00=""><button class="!text-4xl !font-bold !rounded-2xl !py-8 !px-[3.75rem] ap-button blue base rounded filled !text-4xl !font-bold !rounded-2xl !py-8 !px-[3.75rem]" type="button" data-v-bed35f00=""><!---->Start Shipping in Minutes<!----></button></div><div class="flex gap-[6.5rem] text-center mt-40 text-[#3D445C] text-2xl mb-20 container m-auto" data-v-bed35f00=""><div class="flex flex-col" data-v-bed35f00="">
+        <img src="{% static '/images/indiabox.25e408e4.png'%}" class="w-[8.25rem] m-auto" alt="India Box Image" data-v-bed35f00=""><p data-v-bed35f00="">Reach 99.5% of Indian population across 18,500 pin codes</p></div><div class="flex flex-col" data-v-bed35f00="">
+            <img src="{% static '/images/shopify.368649dd.png'%}" class="w-[8.25rem] m-auto" alt="Shopify Image" data-v-bed35f00=""><p data-v-bed35f00="">One-click integration for syncing Shopify and WooCommerce orders</p></div><div class="flex flex-col" data-v-bed35f00="">
+                <img src="{% static '/images/whatsapp-chat.091a88eb.png'%}" class="w-[8.25rem] m-auto" alt="Whatsapp Image" data-v-bed35f00=""><p data-v-bed35f00="">Send shipping and NDR updates to your customers via WhatsApp</p></div><div class="flex flex-col" data-v-bed35f00=""><img src="{% static '/images/fedex.07612582.png'%}" class="w-[8.25rem] m-auto" alt="Fedex Image" data-v-bed35f00=""><p data-v-bed35f00="">Send shipments globally to 220+ countries with FedEx</p></div></div><!-- carousel --><section class="mt-9 pb-[1.65rem] bg-[#F4F4F4] pt-[2.12rem] px-[2.16rem] rounded-[3.25rem] container m-auto" data-v-bed35f00=""><div class="o-car" data-oruga="carousel" data-v-b2bff5bc="" data-v-bed35f00=""><div class="o-car__wrapper" data-v-b2bff5bc=""><div class="o-car__items" data-v-b2bff5bc="" style="transform: translateX(0px);"><!--v-if--><!--
+                    @slot Display carousel item
+                --><div class="o-car__item o-car__item--active" data-id="carousel-1" data-oruga="carousel-item" data-v-bed35f00="" style="width: 515.833px;"><!--
+            @slot Default content
+        --><div class="image" data-v-bed35f00=""><img src="{% static '/images/shipWorld_logo1.png' %}" data-v-bed35f00=""></div></div><div class="o-car__item" data-id="carousel-2" data-oruga="carousel-item" data-v-bed35f00="" style="width: 515.833px;"><!--
+            @slot Default content
+        --><div class="image" data-v-bed35f00=""><img src="{% static '/images/shipWorld_logo2.png' %}" data-v-bed35f00=""></div></div><div class="o-car__item" data-id="carousel-3" data-oruga="carousel-item" data-v-bed35f00="" style="width: 515.833px;"><!--
+            @slot Default content
+        --></div><div class="o-car__item" data-id="carousel-4" data-oruga="carousel-item" data-v-bed35f00="" style="width: 515.833px;"><!--
+            @slot Default content
+        --></div><div class="o-car__item" data-id="carousel-5" data-oruga="carousel-item" data-v-bed35f00="" style="width: 515.833px;"><!--
+            @slot Default content
+        --></div></div><!--
+                @slot Override the arrows
+                @binding {boolean} has-prev has prev arrow button 
+                @binding {boolean} has-next has next arrow button 
+                @binding {(): void} prev switch to prev item function
+                @binding {(): void} next switch to next item function
+            --></div><!--
+            @slot Override the indicators
+            @binding {number} active active index 
+            @binding {(idx: number): void} switch-to switch to item function
+            @binding {number} indicator-index current indicator index
+        --><div class="o-car" data-oruga="carousel" data-v-b2bff5bc="" data-v-bed35f00=""><div class="o-car__wrapper" data-v-b2bff5bc=""><div class="o-car__items" data-v-b2bff5bc="" style="transform: translateX(0px);"><i class="far fa-angle-left icons left-[14.32rem]" size="large" data-v-b2bff5bc="" style="display: none;"></i><i class="far fa-angle-right icons right-[14.32rem]" size="large" data-v-b2bff5bc="" style=""></i><!--
+                    @slot Display carousel item
+                --><div class="o-car__item img-indicator o-car__item--active img-indicator-active o-car__item--clickable" data-id="carousel-1" data-oruga="carousel-item" data-v-bed35f00="" style="width: 257.917px;"><!--
+            @slot Default content
+        --><img src="{% static '/images/channels.441eda5b.png' %}" data-v-bed35f00=""></div><div class="o-car__item img-indicator o-car__item--clickable" data-id="carousel-2" data-oruga="carousel-item" data-v-bed35f00="" style="width: 257.917px;"><!--
+            @slot Default content
+        --><img src="{% static '/images/orders.f65aa505.png' %}" data-v-bed35f00=""></div><div class="o-car__item img-indicator o-car__item--clickable" data-id="carousel-3" data-oruga="carousel-item" data-v-bed35f00="" style="width: 257.917px;"><!--
+            @slot Default content
+        --><img src="{% static '/images/ndr.8494953a.png' %}" data-v-bed35f00=""></div><div class="o-car__item img-indicator o-car__item--clickable" data-id="carousel-4" data-oruga="carousel-item" data-v-bed35f00="" style="width: 257.917px;"><!--
+            @slot Default content
+        --><img src="{% static '/images/analyse-business.3ef3d84c.png' %}" data-v-bed35f00=""></div><div class="o-car__item img-indicator o-car__item--clickable" data-id="carousel-5" data-oruga="carousel-item" data-v-bed35f00="" style="width: 257.917px;"><!--
+            @slot Default content
+        --><img src="{% static '/images/dedicated-support.017634c6.png' %}" data-v-bed35f00=""></div></div><!--
+                @slot Override the arrows
+                @binding {boolean} has-prev has prev arrow button 
+                @binding {boolean} has-next has next arrow button 
+                @binding {(): void} prev switch to prev item function
+                @binding {(): void} next switch to next item function
+            --></div><!--
+            @slot Override the indicators
+            @binding {number} active active index 
+            @binding {(idx: number): void} switch-to switch to item function
+            @binding {number} indicator-index current indicator index
+        --><!--v-if--><!--v-if--></div><!--v-if--></div></section><div class="flex justify-between mt-[7.5rem] text-[#3D445C] text-center container m-auto pt-20" data-v-bed35f00=""><div class="texture" data-v-bed35f00="">
+            <img src="{% static '/images/calc.752d9dcf.png'%}" class="w-[12.5rem] h-[12.5rem] m-auto -mt-[5.12rem]" data-v-bed35f00=""><h3 class="text-4xl font-bold mt-[3.75rem]" data-v-bed35f00="">Confused about costs?</h3><h1 class="text-6xl font-bold my-8" data-v-bed35f00="">Rate Calculator</h1><p class="text-2xl mb-8 px-36" data-v-bed35f00=""> Tell us about your package and destination and get estimates on how much it’ll cost you to ship with us </p><button class="!text-[2rem] !font-semibold !rounded-2xl !py-7 !px-[3.75rem] ap-button blue base rounded filled !text-[2rem] !font-semibold !rounded-2xl !py-7 !px-[3.75rem]" type="button" data-v-bed35f00=""><a href="{% url 'calculate_cost' %}"><!---->Get Estimate </a><!----></button></div>
+            <!-- <div class="texture">
+          <img
+            src="@/assets/images/marker.png"
+            class="w-[12.5rem] h-[12.5rem] m-auto -mt-[5.12rem]"
+          />
+          <h3 class="text-4xl font-bold mt-[3.75rem]">Know where to ship?</h3>
+          <h1 class="text-6xl font-bold my-8">Find Postal Code</h1>
+          <p class="text-2xl mb-8 px-40">
+            We ship to 18,500+ pin codes in India. Enter any pin code here to
+            check if we’ll deliver there
+          </p>
+
+          <ap-input
+            v-model="pincode"
+            placeholder="Enter Pin Code"
+            type="number"
+            class="pincode-search"
+          >
+            <template #inline-addon-leading>
+              <ap-button>
+                <ap-icon icon="angle-right" size="large" />
+              </ap-button>
+            </template>
+          </ap-input>
+        </div> --></div><div class="my-20 py-[6.5rem] px-[6.25rem] bg-[#1F222E] text-[#fff] text-center rounded-[3.25rem] container m-auto" data-v-bed35f00=""><h1 class="text-6xl font-bold" data-v-bed35f00="">Start shipping Instantly!</h1><p class="opacity-80 text-3xl font-bold mt-4 px-60" data-v-bed35f00=""> Fulfil online orders with India’s largest integrated logistics company </p><button class="!text-4xl !font-bold !rounded-2xl !py-8 !px-[3.75rem] mt-12 ap-button white base rounded filled !text-4xl !font-bold !rounded-2xl !py-8 !px-[3.75rem] mt-12" type="button" data-v-bed35f00=""><!---->Sign Up with Zero Fees<!----></button></div><div class="!py-26 grey-bg -mx-[5.875rem] px-[5.875rem]" style="border-bottom:1px solid rgb(0 0 0 / 15%);" data-v-bed35f00=""><div class="services-container container m-auto" data-v-bed35f00=""><h2 class="common-heading" data-v-bed35f00=""> Explore more from <span class="font-bold" data-v-bed35f00="">ShipWorld</span></h2><div class="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8 mt-16" data-v-bed35f00=""><div class="service-item" data-v-bed35f00=""><div class="service-img" data-v-bed35f00=""><img src="{% static '/images/favicon1.png'%}" class="w-full" data-v-bed35f00=""></div><div class="pt-4 md:pt-10" data-v-bed35f00=""><div class="text-base md:text-2xl font-semibold mb-2 text-[#101218]" data-v-bed35f00=""> Courier &amp; Sales Franchise </div><div class="font-open text-lg font-medium text-[#3D445C]" data-v-bed35f00=""> Send shipments across India for parcels across categories including heavy goods. Get value added services like RTO reduction tools, door-step inspection and tracking </div></div></div><div class="service-item" data-v-bed35f00=""><div class="service-img" data-v-bed35f00="">
+            <img src="{% static '/images/parner4.1079ed39.png'%}" class="w-full" data-v-bed35f00=""></div><div class="pt-4 md:pt-10" data-v-bed35f00=""><div class="text-base md:text-2xl font-semibold mb-0.5 md:mb-2 text-[#101218]" data-v-bed35f00=""> B2B Enterprise </div><div class="font-open text-lg font-medium text-[#3D445C]" data-v-bed35f00=""> Get end-to-end supply chain solutions from suppliers to customers by bringing efficiency, speed and precision with deeply integrated warehousing and logistics network </div></div></div><div class="service-item" data-v-bed35f00=""><div class="service-img" data-v-bed35f00=""><img src="{% static '/images/parner3.e620ba8d.png'%}" class="w-full" data-v-bed35f00=""></div><div class="pt-4 md:pt-10" data-v-bed35f00=""><div class="text-base md:text-2xl font-semibold mb-2 text-[#101218]" data-v-bed35f00=""> Cross Border </div><div class="font-open text-lg font-medium text-[#3D445C]" data-v-bed35f00=""> Get door-to-door, port-to- port Express Parcel and Freight services from India to 220+ countries. Our strategic partners include FedEx and Aramex </div></div></div></div></div></div>
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHZHDD92" height="0" width="0"
+        style="display: none; visibility: hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+      
+
+
+
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1282844555707115");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1282844555707115&amp;ev=PageView&amp;noscript=1"></noscript>
+<iframe allow="join-ad-interest-group" data-tagging-id="AW-745560309" data-load-time="1708769073328" height="0" width="0" style="display: none; visibility: hidden;" src="https://td.doubleclick.net/td/rul/745560309?random=1708769073318&amp;cv=11&amp;fst=1708769073318&amp;fmt=3&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be42l0v9167953109za200&amp;gcd=13l3l3l3l1&amp;dma=0&amp;u_w=1280&amp;u_h=720&amp;url=https%3A%2F%2Fone.delhivery.com%2Fregister&amp;tiba=Delhivery%20One%20-%20Register&amp;hn=www.googleadservices.com&amp;frm=0&amp;npa=0&amp;pscdl=noapi&amp;auid=1712422375.1708769072&amp;uaa=x86&amp;uab=64&amp;uafvl=Not%2520A(Brand%3B99.0.0.0%7CGoogle%2520Chrome%3B121.0.6167.161%7CChromium%3B121.0.6167.161&amp;uamb=0&amp;uap=Windows&amp;uapv=14.0.0&amp;uaw=0&amp;fledge=1&amp;data=event%3Dpage_view%3Bpage_path%3D%2Fregister"></iframe></body></html>

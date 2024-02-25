@@ -1,0 +1,1694 @@
+
+{% load static %}
+<!doctype html>
+<html lang="en-US">
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.4",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript][data-rocket-src]").forEach(e=>{let r=e.getAttribute("data-rocket-src");if(r&&0!==r.indexOf("data:")){0===r.indexOf("//")&&(r=location.protocol+r);try{let i=new URL(r).origin;i!==location.origin&&t.push({src:i,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(n){}}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._pendingWebpackRequests(this),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){if(await this._littleBreath(),!0===t.noModule&&"noModule"in HTMLScriptElement.prototype){t.setAttribute("data-rocket-status","skipped");return}return new Promise(navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(){let t={};function e(e,r){!function e(r){!t[r]&&(t[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),t[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),t[r].originalFunctions.remove.apply(r,arguments)});function i(e){return t[r].eventsToRewrite.indexOf(e)>=0?"rocket-"+e:e}}(e),t[e].eventsToRewrite.push(r)}function r(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}e(document,"DOMContentLoaded"),e(window,"DOMContentLoaded"),e(window,"load"),e(window,"pageshow"),e(document,"readystatechange"),r(document,"onreadystatechange"),r(window,"onload"),r(window,"onpageshow")}_delayJQueryReady(t){let e;function r(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}function i(i){if(i&&i.fn&&!t.allJQueries.includes(i)){i.fn.ready=i.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(i):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(i)),i([])};let n=i.fn.on;i.fn.on=i.fn.init.prototype.on=function(){return this[0]===window&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=r(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{let e=arguments[0][t];delete arguments[0][t],arguments[0][r(t)]=e})),n.apply(this,arguments),this},t.allJQueries.push(i)}e=i}i(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){i(t)}})}async _pendingWebpackRequests(t){let e=document.querySelector("script[data-webpack]");async function r(){return new Promise(t=>{e.addEventListener("load",t),e.addEventListener("error",t)})}e&&(await r(),await t._requestAnimFrame(),await t._pendingWebpackRequests(t))}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="facebook-domain-verification" content="nfe3fsa6eq9ybfhh9l23pqc31hq1l8" />
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="icon" type="image/x-icon" href="{% static 'images/favicon1.jpg' %}">
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+
+	<!-- This site is optimized with the Yoast SEO plugin v21.5 - https://yoast.com/wordpress/plugins/seo/ -->
+	
+	
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="eCommerce Logistics Solutions: Shipping &amp; Courier Aggregator" />
+	
+	<meta property="article:modified_time" content="2023-10-18T06:04:43+00:00" />
+	<meta property="og:image" content="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2022/08/SR-Foot-Banner-1-1.png" />
+	<meta property="og:image:width" content="1024" />
+	<meta property="og:image:height" content="460" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+		<meta name="google-site-verification" content="mE01gQ3XMVTK1diAgaAQ5oFcfu82updCUHmA1NFZB3E" />
+	<!-- / Yoast SEO plugin. -->
+<title>Home</title>
+<style id='classic-theme-styles-inline-css'>
+
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<link data-minify="1" rel='stylesheet' id='contact-form-7-css' href='https://d2kh7o38xye1vj.cloudfront.net/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=1700476212' media='all' />
+<link data-minify="1" rel='stylesheet' id='email-subscribers-css' href='https://d2kh7o38xye1vj.cloudfront.net/wp-content/cache/min/1/wp-content/plugins/email-subscribers/lite/public/css/email-subscribers-public.css?ver=1700476212' media='all' />
+<link data-minify="1" rel='stylesheet' id='SR_testimonials-css' href='https://d2kh7o38xye1vj.cloudfront.net/wp-content/cache/min/1/wp-content/plugins/sr-testimonials/style.css?ver=1700476212' media='all' />
+<link data-minify="1" rel='stylesheet' id='sr-toc-style-css' href='https://d2kh7o38xye1vj.cloudfront.net/wp-content/cache/min/1/wp-content/plugins/sr-toc/style.css?ver=1700476212' media='all' />
+<link data-minify="1" rel='stylesheet' id='cf7mls-css' href='https://d2kh7o38xye1vj.cloudfront.net/wp-content/cache/min/1/wp-content/plugins/cf7-multi-step/assets/frontend/css/cf7mls.css?ver=1700476212' media='all' />
+<link rel='stylesheet' id='cf7mls_animate-css' href='https://d2kh7o38xye1vj.cloudfront.net/wp-content/plugins/cf7-multi-step/assets/frontend/animate/animate.min.css?ver=2.7.3' media='all' />
+<link rel="stylesheet" href="{% static 'basic.css' %}">
+<style type="text/css">div[id^="wpcf7-f38068"] button.cf7mls_next {   }div[id^="wpcf7-f38068"] button.cf7mls_back {   }div[id^="wpcf7-f37669"] button.cf7mls_next {   }div[id^="wpcf7-f37669"] button.cf7mls_back {   }div[id^="wpcf7-f37001"] button.cf7mls_next {   }div[id^="wpcf7-f37001"] button.cf7mls_back {   }div[id^="wpcf7-f36303"] button.cf7mls_next {   }div[id^="wpcf7-f36303"] button.cf7mls_back {   }div[id^="wpcf7-f35629"] button.cf7mls_next {   }div[id^="wpcf7-f35629"] button.cf7mls_back {   }div[id^="wpcf7-f35288"] button.cf7mls_next {   }div[id^="wpcf7-f35288"] button.cf7mls_back {   }div[id^="wpcf7-f32191"] button.cf7mls_next {   }div[id^="wpcf7-f32191"] button.cf7mls_back {   }div[id^="wpcf7-f31163"] button.cf7mls_next {   }div[id^="wpcf7-f31163"] button.cf7mls_back {   }div[id^="wpcf7-f35287"] button.cf7mls_next {   }div[id^="wpcf7-f35287"] button.cf7mls_back {   }div[id^="wpcf7-f29907"] button.cf7mls_next {   }div[id^="wpcf7-f29907"] button.cf7mls_back {   }div[id^="wpcf7-f29051"] button.cf7mls_next {   }div[id^="wpcf7-f29051"] button.cf7mls_back {   }div[id^="wpcf7-f28764"] button.cf7mls_next {   }div[id^="wpcf7-f28764"] button.cf7mls_back {   }div[id^="wpcf7-f26797"] button.cf7mls_next {   }div[id^="wpcf7-f26797"] button.cf7mls_back {   }div[id^="wpcf7-f26426"] button.cf7mls_next {   }div[id^="wpcf7-f26426"] button.cf7mls_back {   }div[id^="wpcf7-f25911"] button.cf7mls_next {   }div[id^="wpcf7-f25911"] button.cf7mls_back {   }div[id^="wpcf7-f25896"] button.cf7mls_next {   }div[id^="wpcf7-f25896"] button.cf7mls_back {   }div[id^="wpcf7-f25572"] button.cf7mls_next {   }div[id^="wpcf7-f25572"] button.cf7mls_back {   }div[id^="wpcf7-f25281"] button.cf7mls_next {   }div[id^="wpcf7-f25281"] button.cf7mls_back {   }div[id^="wpcf7-f24906"] button.cf7mls_next {   }div[id^="wpcf7-f24906"] button.cf7mls_back {   }div[id^="wpcf7-f24564"] button.cf7mls_next {   }div[id^="wpcf7-f24564"] button.cf7mls_back {   }div[id^="wpcf7-f23946"] button.cf7mls_next {   }div[id^="wpcf7-f23946"] button.cf7mls_back {   }div[id^="wpcf7-f23350"] button.cf7mls_next {   }div[id^="wpcf7-f23350"] button.cf7mls_back {   }div[id^="wpcf7-f23346"] button.cf7mls_next {   }div[id^="wpcf7-f23346"] button.cf7mls_back {   }div[id^="wpcf7-f23172"] button.cf7mls_next {   }div[id^="wpcf7-f23172"] button.cf7mls_back {   }div[id^="wpcf7-f22324"] button.cf7mls_next {   }div[id^="wpcf7-f22324"] button.cf7mls_back {   }div[id^="wpcf7-f22232"] button.cf7mls_next {   }div[id^="wpcf7-f22232"] button.cf7mls_back {   }div[id^="wpcf7-f21026"] button.cf7mls_next {   }div[id^="wpcf7-f21026"] button.cf7mls_back {   }div[id^="wpcf7-f18866"] button.cf7mls_next {   }div[id^="wpcf7-f18866"] button.cf7mls_back {   }div[id^="wpcf7-f18385"] button.cf7mls_next {   }div[id^="wpcf7-f18385"] button.cf7mls_back {   }div[id^="wpcf7-f17998"] button.cf7mls_next {   }div[id^="wpcf7-f17998"] button.cf7mls_back {   }div[id^="wpcf7-f17443"] button.cf7mls_next {   }div[id^="wpcf7-f17443"] button.cf7mls_back {   }div[id^="wpcf7-f16997"] button.cf7mls_next {   }div[id^="wpcf7-f16997"] button.cf7mls_back {   }div[id^="wpcf7-f16706"] button.cf7mls_next {   }div[id^="wpcf7-f16706"] button.cf7mls_back {   }div[id^="wpcf7-f16185"] button.cf7mls_next {   }div[id^="wpcf7-f16185"] button.cf7mls_back {   }div[id^="wpcf7-f16126"] button.cf7mls_next {   }div[id^="wpcf7-f16126"] button.cf7mls_back {   }div[id^="wpcf7-f15575"] button.cf7mls_next {   }div[id^="wpcf7-f15575"] button.cf7mls_back {   }div[id^="wpcf7-f14558"] button.cf7mls_next {   }div[id^="wpcf7-f14558"] button.cf7mls_back {   }div[id^="wpcf7-f13946"] button.cf7mls_next {   }div[id^="wpcf7-f13946"] button.cf7mls_back {   }div[id^="wpcf7-f13693"] button.cf7mls_next {   }div[id^="wpcf7-f13693"] button.cf7mls_back {   }</style><link rel="icon" href="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2022/11/sr-favicon.png" sizes="32x32" />
+<link rel="icon" href="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2022/11/sr-favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2022/11/sr-favicon.png" />
+<meta name="msapplication-TileImage" content="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2022/11/sr-favicon.png" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>	
+	<!-- Google Tag Manager -->
+	<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-P7FQTZ6');</script>
+	<!-- End Google Tag Manager -->
+   <style>
+    
+      .menuWrapper
+      {
+          background-color:#FFEFD5;
+      }
+  </style>
+</head>
+
+<body data-rsssl=1 class="home page-template page-template-templates page-template-SrHome page-template-templatesSrHome-php page page-id-10113 wp-custom-logo">
+<div id="page" class="site">
+	<header class="site-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="menuWrapper">
+						<div class="logo">
+															<h1>MyShippingWorld</h1>	</div>
+						<div class="mainMenu">
+							<nav id="site-navigation" class="main-navigation">
+								<div class="menu-main-menu-container"><ul id="main_menu" class="menu">
+                          <!--- <li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7"><a href="{% url 'basic' %}"><div><span>Home</span></div></a> -->
+                           <li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7"><a href="{% url 'about_us' %}"><div><span>About us</span></div></a>
+
+<li id="menu-item-26" class="mega1 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-26"><a href="{% url 'contact' %}"><div><span>Contact us</span></div></a>
+
+<li id="menu-item-30260" class=" menu-item-object-page menu-item-30260"><a href="{% url 'activate_pincode' %}"><div><span>Activate Pincode</span></div></a></li>
+
+<li id="menu-item-30259" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30259"><a href="{% url 'track_order' %}"><div><span>Track Order</span></div></a></li>
+<li id="menu-item-30259" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30259"><a href="{% url 'calculate_cost' %}"><div><span>Calculate Price</span></div></a></li>
+<li id="menu-item-30259" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30259"><a href="https://www.linkedin.com/in/pushpendra-aryan-singh-9b2809174?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><div><span>Follow Me!</span></div></a></li>
+
+</ul></div>							</nav>
+						</div>
+						<div class="appLogins">
+							<ul>
+																<li>
+									<a href="{% url 'login' %}" target="_blank">Log In</a>
+								</li>
+								<li>
+									<a class="button-light-blue" href="{% url 'register' %}" target="_blank">Sign Up</a>
+								</li>
+															</ul>
+						</div>
+						<a class="MobileNavController" href="#">
+							<div>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+<section class="homePageBannerSilder">
+   <canvas id="gradient-canvas" style=""></canvas>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-6 col-12">
+            <h1 class="headingText"><span class="blueOrgangeGradient">Welcome To MY Shipping World</h1>
+            <p class="content">
+              <h1> Demo website as of now...</h1> </p>
+            <a class="blueBtn" href="{% url 'register' %}" target="_blank" rel="noopener"> Sign up for free </a>
+         </div>
+<div class="homeBannerSilderWrapper">
+         <div class="homeBannerSilder">
+            <div class="bannerSlider">
+
+               <div class="whiteCardWithIcon">
+                  <div class="contentWrapper">
+                     <p class="smallp"> Estimated Delivery Date </p>
+                     <h3> 17 June </h3>
+                  </div>
+                  <div class="imageWrapper">
+                     <img width="1790" height="2016" decoding="async" src="{% static 'images/aryan_3.png' %}" alt="img"  alt="img"></noscript>
+                  </div>
+               </div>
+
+<img width="733" height="1179" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20733%201179'%3E%3C/svg%3E" class="bannerSliderImg smallImageInmob" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/09/home-slider-image-15-1.webp"><noscript><img width="733" height="1179" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/09/home-slider-image-15-1.webp" class="bannerSliderImg smallImageInmob" alt="img"></noscript>
+
+<div class="globwrapper">
+<img width="726" height="633" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20726%20633'%3E%3C/svg%3E" class="bannerSliderImg smallImageInmob" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-18.webp"><noscript><img width="726" height="633" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-18.webp" class="bannerSliderImg smallImageInmob" alt="img"></noscript>
+<img width="324" height="324" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20324%20324'%3E%3C/svg%3E" class="globeImg" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-17.webp"><noscript><img width="324" height="324" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-17.webp" class="globeImg" alt="img"></noscript>
+</div>
+ <div class="whiteCardWithIcon topImage">
+                  <div class="imageWrapper">
+                     <img width="594" height="153" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20594%20153'%3E%3C/svg%3E" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-19.webp"><noscript><img width="594" height="153" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-19.webp" alt="img"></noscript>
+                  </div>
+                  <div class="contentWrapper">
+                     <h3> <span class="counter" data-target="270" data-duration="20000">0</span>K+ </h3>
+                    <p class="smallp greyColor"> Happy Sellers </p>
+                  </div>
+               </div>
+
+<img width="816" height="488" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20816%20488'%3E%3C/svg%3E" class="bannerSliderImg " alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-27.webp"><noscript><img width="816" height="488" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-27.webp" class="bannerSliderImg " alt="img"></noscript>
+
+<img width="726" height="357" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20726%20357'%3E%3C/svg%3E" class="bannerSliderImg " alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-20.webp"><noscript><img width="726" height="357" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-20.webp" class="bannerSliderImg " alt="img"></noscript>
+
+<div class="gradientCard whiteCardWithIcon">
+
+<div class="imageWrapper">
+                     <img width="317" height="230" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20317%20230'%3E%3C/svg%3E" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-9.webp"><noscript><img width="317" height="230" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-9.webp" alt="img"></noscript>
+                  </div>
+                  <div class="contentWrapper">
+                     <h3> <span class="counter" data-target="340" data-duration="20000">0</span> </h3>
+                    <p class="smallp greyColor">Your total orders </p>
+                  </div>
+
+</div>
+
+<img width="727" height="697" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20727%20697'%3E%3C/svg%3E" class="bannerSliderImg smallImageInmob" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-13.webp"><noscript><img width="727" height="697" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-13.webp" class="bannerSliderImg smallImageInmob" alt="img"></noscript>
+
+<img width="726" height="669" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20726%20669'%3E%3C/svg%3E" class="bannerSliderImg smallImageInmob" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-8.webp"><noscript><img width="726" height="669" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-8.webp" class="bannerSliderImg smallImageInmob" alt="img"></noscript>
+
+
+<div class="logoWrapers carrier">
+
+<div class="wrapper">
+<img width="291" height="81" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20291%2081'%3E%3C/svg%3E" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-2.webp"><noscript><img width="291" height="81" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-2.webp" alt="img"></noscript>
+</div>
+
+<div class="wrapper">
+<img width="225" height="99" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20225%2099'%3E%3C/svg%3E" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-3.webp"><noscript><img width="225" height="99" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-3.webp" alt="img"></noscript>
+</div>
+
+<div class="wrapper">
+<img width="222" height="105" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20222%20105'%3E%3C/svg%3E" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-4.webp"><noscript><img width="222" height="105" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-4.webp" alt="img"></noscript>
+</div>
+
+<div class="wrapper">
+<img width="264" height="42" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20264%2042'%3E%3C/svg%3E" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-23.webp"><noscript><img width="264" height="42" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-23.webp" alt="img"></noscript>
+</div>
+
+</div>
+
+
+
+            </div>
+            <div class="bannerSlider bannerSliderSlow">
+
+               <div class="whiteCardWithIcon leftImage">
+                  <div class="imageWrapper">
+                     <img width="162" height="162" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20162%20162'%3E%3C/svg%3E" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-5.webp"><noscript><img width="162" height="162" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-5.webp" alt="img"></noscript>
+                  </div>
+                  <div class="contentWrapper">
+                     <p class="smallp greyColor"> Total Revenue </p>
+                     <h3> ₹<span class="counter" data-target="60000" data-duration="20000">0</span> </h3>
+                     <span class="greenCount"> +<span class="counter" data-target="290" data-duration="20000">0</span>% </span>
+                  </div>
+               </div>
+
+<img width="983" height="696" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20983%20696'%3E%3C/svg%3E" class="bannerSliderImg" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-10.webp"><noscript><img width="983" height="696" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-10.webp" class="bannerSliderImg" alt="img"></noscript>
+
+<div class="whatsappImageWrapper">
+<img width="444" height="444" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20444%20444'%3E%3C/svg%3E" class="bannerSliderImg" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-16.webp"><noscript><img width="444" height="444" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-16.webp" class="bannerSliderImg" alt="img"></noscript>
+
+<div class="contentWrapper">
+<h3> <span class="counter" data-target="150" data-duration="20000">0</span>K </h3>
+<p> Orders Fulfilled Monthly </p>
+</div>
+
+</div>
+
+<div class="whiteCardWithIcon leftImage smallIcon">
+                  <div class="imageWrapper">
+                     <img width="60" height="35" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2060%2035'%3E%3C/svg%3E" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/fast.svg"><noscript><img width="60" height="35" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/fast.svg" alt="img"></noscript>
+                  </div>
+                  <div class="contentWrapper">
+                     <p> Next Day Delivery </p>
+                  </div>
+ </div>
+
+<div class="whiteCardWithIcon leftImage smallIcon">
+                  <div class="imageWrapper">
+                     <img width="43" height="43" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2043%2043'%3E%3C/svg%3E" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/truck.svg"><noscript><img width="43" height="43" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/truck.svg" alt="img"></noscript>
+                  </div>
+                  <div class="contentWrapper">
+                     <p> 1-2 Day Delivery </p>
+                  </div>
+ </div>
+
+<img width="1233" height="688" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201233%20688'%3E%3C/svg%3E" class="bannerSliderImg" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-7.webp"><noscript><img width="1233" height="688" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-7.webp" class="bannerSliderImg" alt="img"></noscript>
+
+<img width="1214" height="939" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201214%20939'%3E%3C/svg%3E" class="bannerSliderImg" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/09/home-slider-image-12-1.webp"><noscript><img width="1214" height="939" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/09/home-slider-image-12-1.webp" class="bannerSliderImg" alt="img"></noscript>
+
+
+<div class="logoWrapers channel">
+
+<div class="wrapper">
+<img width="354" height="105" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20354%20105'%3E%3C/svg%3E" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-25.webp"><noscript><img width="354" height="105" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-25.webp" alt="img"></noscript>
+</div>
+
+<div class="wrapper">
+<img width="345" height="96" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20345%2096'%3E%3C/svg%3E" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-24.webp"><noscript><img width="345" height="96" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-24.webp" alt="img"></noscript>
+</div>
+
+<div class="wrapper">
+<img width="294" height="168" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20294%20168'%3E%3C/svg%3E" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-28.webp"><noscript><img width="294" height="168" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-28.webp" alt="img"></noscript>
+</div>
+
+<div class="wrapper">
+<img width="357" height="108" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20357%20108'%3E%3C/svg%3E" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-1.webp"><noscript><img width="357" height="108" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-1.webp" alt="img"></noscript>
+</div>
+
+</div>
+
+<img width="986" height="658" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20986%20658'%3E%3C/svg%3E" class="bannerSliderImg" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-14.webp"><noscript><img width="986" height="658" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-14.webp" class="bannerSliderImg" alt="img"></noscript>
+
+<img width="904" height="1112" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20904%201112'%3E%3C/svg%3E" class="bannerSliderImg" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-21.webp"><noscript><img width="904" height="1112" decoding="async" src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-slider-image-21.webp" class="bannerSliderImg" alt="img"></noscript>
+     </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+
+
+<section class="Section logoAndPointsSection">
+   <div class="container">
+      <div class="row">
+         <div class="col-12">
+<div  class="contentWraperLogoSection">
+            <div class="logoContainer">
+               <ul class="logoWrapperInBox mb-60">
+                  <li> <img width="326" height="50" decoding="async"  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20326%2050'%3E%3C/svg%3E" style="max-width: 140px;" alt="img" data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/brand-logo-home-rv-2.png"><noscript><img width="326" height="50" decoding="async"  src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/brand-logo-home-rv-2.png" style="max-width: 140px;" alt="img"></noscript> </li>
+                  <li> <img width="408" height="56" decoding="async"  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20408%2056'%3E%3C/svg%3E" alt="img" style="
+                     max-width: 155px;
+                     " data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/brand-logo-home-rv-1.png"><noscript><img width="408" height="56" decoding="async"  src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/brand-logo-home-rv-1.png" alt="img" style="
+                     max-width: 155px;
+                     "></noscript> </li>
+                  <li> <img width="264" height="46" decoding="async"  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20264%2046'%3E%3C/svg%3E" alt="img" style="
+                     max-width: 132px;
+                     " data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/brand-logo-home-rv-3.png"><noscript><img width="264" height="46" decoding="async"  src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/brand-logo-home-rv-3.png" alt="img" style="
+                     max-width: 132px;
+                     "></noscript> </li>
+                  <li> <img width="260" height="54" decoding="async"  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20260%2054'%3E%3C/svg%3E" alt="img" style="
+                     max-width: 112px;
+                     " data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/brand-logo-home-rv-5.png"><noscript><img width="260" height="54" decoding="async"  src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/brand-logo-home-rv-5.png" alt="img" style="
+                     max-width: 112px;
+                     "></noscript> </li>
+                  <li> <img width="192" height="76" decoding="async"  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20192%2076'%3E%3C/svg%3E" alt="img" style="
+                     max-width: 96px;
+                     " data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/brand-logo-home-rv-6.png"><noscript><img width="192" height="76" decoding="async"  src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/brand-logo-home-rv-6.png" alt="img" style="
+                     max-width: 96px;
+                     "></noscript> </li>
+                  <li> <img width="217" height="74" decoding="async"  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20217%2074'%3E%3C/svg%3E" alt="img" style="
+                     max-width: 123px;
+                     " data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/brand-logo-home-rv-4.png"><noscript><img width="217" height="74" decoding="async"  src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/brand-logo-home-rv-4.png" alt="img" style="
+                     max-width: 123px;
+                     "></noscript> </li>
+                  <li> <img width="122" height="98" decoding="async"  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20122%2098'%3E%3C/svg%3E" alt="img" style="
+                     max-width: 74px;
+                     " data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/brand-logo-home-rv-7.png"><noscript><img width="122" height="98" decoding="async"  src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/brand-logo-home-rv-7.png" alt="img" style="
+                     max-width: 74px;
+                     "></noscript> </li>
+                  <li> <img width="128" height="90" decoding="async"  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20128%2090'%3E%3C/svg%3E" alt="img" style="
+                     max-width: 80px;
+                     " data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/brand-logo-home-rv-9.png"><noscript><img width="128" height="90" decoding="async"  src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/brand-logo-home-rv-9.png" alt="img" style="
+                     max-width: 80px;
+                     "></noscript> </li>
+                  <li> <img width="152" height="92" decoding="async"  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20152%2092'%3E%3C/svg%3E" alt="img" style="
+                     max-width: 62px;
+                     " data-lazy-src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/brand-logo-home-rv-8.png"><noscript><img width="152" height="92" decoding="async"  src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/brand-logo-home-rv-8.png" alt="img" style="
+                     max-width: 62px;
+                     "></noscript> </li>
+               </ul>
+            </div>
+            <div data-v-0e9eb40e="" class="trusted-wrapper mt-7 block md:hidden pl-4 mb-8">
+              <img data-v-0e9eb40e="" src="{% static 'images/delhivery.png' %}" class="w-full"></div>
+               <div class="imageWrapper  col-md-6 col-12">
+                <img width="300000" height="1500" src="{% static 'images/delhivery.png' %}" alt="img" >
+                </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+</section>
+
+
+
+
+
+<section class="Section tabSection">
+   <div class="container">
+   <div class="row">
+      <div class="col-12">
+         <div class="homeContentWrapper">
+            <h3 class="newSize">
+               <span class="greenPurpleGradient"> Fulfillment </span> <br /> Fulfill every need
+            </h3>
+         </div>
+         <div class="tabWrapperFulfillment mt-60">
+            <div class="tabContentWrapper">
+               <div class="tabSingleItem active">
+                  <div class="homeContentWrapper">
+                     <h4> B2C fulfillment </h4>
+                     <p> Store inventory closest to your customers &#038; deliver their packages on the same or the next day</p>
+                     
+                  </div>
+               </div>
+               <div class="tabSingleItem">
+                  <div class="homeContentWrapper">
+                     <h4> B2B shipping </h4>
+                     <p> Fulfill and ship your B2B orders in bulk and on time with our end-to-end solution</p>
+                     
+                  </div>
+               </div>
+               <div class="tabSingleItem">
+                  <div class="homeContentWrapper">
+                     <h4> Omnichannel enablement </h4>
+                     <p> Connect your warehouses, stores, marketplaces, and website to provide a unified experience</p>
+                     
+                  </div>
+               </div>
+            </div>
+            <div class="tabImageWrapper">
+               <img width="1064" height="1038" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/fufillment-images-srH2ome-.webp" class="active" alt="img">
+               <img width="944" height="998" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/fufillment-images-srH3ome-.webp" alt="img">
+               <img width="1094" height="950" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/fulfillment-64ad1a6a8dabf.webp" alt="img">
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+
+
+
+
+<section class="clienLogoSection darkTwoRowSliderVertical homeLogoSlider2">
+   <div class="container">
+      <div class="row alignItemsCenter">
+         <div class="col-md-6 col-12">
+            <div class="homeContentWrapper">
+               <h2 style=" color: #fff; "> From anywhere <br />  <span class="blueOrgangeGradient light"> to everywhere </span> </h2>
+               <p style=" color: #fff; "> Our multi-courier network spread across 24000+ pin codes <br /> lets you say yes to every order, even from remote areas. </p>
+               <a href="/carrier-integrations/" class="linkBtn" style="color: #fff;" rel="noopener">
+                  Explore integrations
+                  
+               </a>
+            </div>
+         </div>
+         <div class="col-md-6 col-12 p0">
+            <div class="clientTwoRowVerticalSlider">
+               <div class=" clitentSlideToTop">
+                 
+                  <div class="clientLogoWraper">
+                     <img width="424" height="384" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20424%20384'%3E%3C/svg%3E" alt="img" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cl-logo-2.png"><noscript><img width="424" height="384" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cl-logo-2.png" alt="img"></noscript>
+                  </div>
+                  <div class="clientLogoWraper">
+                     <img width="424" height="384" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20424%20384'%3E%3C/svg%3E" alt="img" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cl-logo-3.png"><noscript><img width="424" height="384" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cl-logo-3.png" alt="img"></noscript>
+                  </div>
+                  <div class="clientLogoWraper">
+                     <img width="424" height="384" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20424%20384'%3E%3C/svg%3E" alt="img" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cl-logo-4.png"><noscript><img width="424" height="384" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cl-logo-4.png" alt="img"></noscript>
+                  </div>
+               </div>
+               <div class=" clitentSlideToBottom">
+                  <div class="clientLogoWraper">
+                     <img width="424" height="384" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20424%20384'%3E%3C/svg%3E" alt="img" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cl-logo-5.png"><noscript><img width="424" height="384" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cl-logo-5.png" alt="img"></noscript>
+                  </div>
+                  <div class="clientLogoWraper">
+                     <img width="424" height="384" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20424%20384'%3E%3C/svg%3E" alt="img" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cl-logo-6.png"><noscript><img width="424" height="384" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cl-logo-6.png" alt="img"></noscript>
+                  </div>
+                  <div class="clientLogoWraper">
+                     <img width="424" height="384" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20424%20384'%3E%3C/svg%3E" alt="img" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cl-logo-7.png"><noscript><img width="424" height="384" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cl-logo-7.png" alt="img"></noscript>
+                  </div>
+                  <div class="clientLogoWraper">
+                     <img width="424" height="384" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20424%20384'%3E%3C/svg%3E" alt="img" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cl-logo-8.png"><noscript><img width="424" height="384" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cl-logo-8.png" alt="img"></noscript>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+
+
+<section class="Section boxGridSectionTwoCol overflowHidden">
+   <div class="container">
+      <div class="row">
+         <div class="col-12">
+            <div class=" ">
+               <div class="homeContentWrapper">
+                  <h2>What makes it all<span class="yellowPurpelGradient light"> work together </span></h2>
+                  <h3 class="">
+                     Seamlessly connected components
+                  </h3>
+                  <p> Use one platform to manage everything, including your sales channels, inventory, catalogues, carriers and customer data</p>
+               </div>
+               <a class="blueBtn" href="{% url 'register' %}" target="_blank" rel="noopener"> Sign up for free </a>
+            </div>
+            <div class="boxWrapperShipping twoColWrapper mt-60">
+               <div class="singleBox">
+                  <div class="imageWrapperBox">
+                     <img width="1127" height="475" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201127%20475'%3E%3C/svg%3E" alt="img" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/ecosystem-integration.webp"><noscript><img width="1127" height="475" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/ecosystem-integration.webp" alt="img"></noscript>
+                  </div>
+                  <div class="homeContentWrapper">
+                     <h4> 150+ ecosystem integrations </h4>
+                     <p> Leverage the largest eCommerce enablement layer of carts, checkout and payment interfaces, courier partners and more</p>
+                     
+                  </div>
+               </div>
+               <div class="singleBox">
+                  <div class="imageWrapperBox withMobAnddesktop">
+                     <img width="869" height="486" src="{% static '/images/shipWorld_logo1.png' %}">
+<img width="830" height="533" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20830%20533'%3E%3C/svg%3E" class="mob" alt="img" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/what-makes-it-mob-1.webp"><noscript><img width="830" height="533" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/what-makes-it-mob-1.webp" class="mob" alt="img"></noscript>
+                  </div>
+                  <div class="homeContentWrapper">
+                     <h4> Over 1 Trillion data points </h4>
+                     <p> Be it reducing RTO or improving conversions, utilise our AI-driven analytics to achieve it all smartly</p>
+                     
+                  </div>
+               </div>
+               
+               
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+
+
+<section class="Section clienLogoSection centerZigZagLineLogo homelogoSection3">
+  <div class="container">
+     <div class="row alignItemsCenter">
+        <div class="col-12">
+           <div class="homeContentWrapper">
+              <h2> Manage multiple channels in <span class="blueOrgangeGradient light"> one place</span></h2>
+              <p> Integrate 12+ sales channels to easily manage your orders, inventory and more</p>
+           </div>
+          
+        </div>
+     </div>
+  </div>
+  <div class="container-fluid">
+     <div class="row alignItemsCenter">
+        <div class="col-12">
+           <ul class="clienLogoWraper">
+              <li>
+                 <img width="307" height="306" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20307%20306'%3E%3C/svg%3E" alt="img" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cllogo-1.png"><noscript><img width="307" height="306" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cllogo-1.png" alt="img"></noscript>      
+              </li>
+              <li>
+                <img width="307" height="306" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20307%20306'%3E%3C/svg%3E" alt="img" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cllogo-2.png"><noscript><img width="307" height="306" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cllogo-2.png" alt="img"></noscript>      
+              </li>
+              <li>
+                <img width="307" height="306" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20307%20306'%3E%3C/svg%3E" alt="img" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cllogo-3.png"><noscript><img width="307" height="306" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cllogo-3.png" alt="img"></noscript>        
+              </li>
+              <li>
+                <img width="307" height="306" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20307%20306'%3E%3C/svg%3E" alt="img" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cllogo-4.png"><noscript><img width="307" height="306" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cllogo-4.png" alt="img"></noscript>        
+              </li>
+              <li>
+                <img width="307" height="306" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20307%20306'%3E%3C/svg%3E" alt="img" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cllogo-5.png"><noscript><img width="307" height="306" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cllogo-5.png" alt="img"></noscript>        
+              </li>
+              <li>
+                <img width="307" height="306" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20307%20306'%3E%3C/svg%3E" alt="img" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cllogo-2.png"><noscript><img width="307" height="306" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cllogo-2.png" alt="img"></noscript>     
+              </li>
+            <li>
+                <img width="307" height="306" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20307%20306'%3E%3C/svg%3E" alt="img" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cllogo-4.png"><noscript><img width="307" height="306" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/cllogo-4.png" alt="img"></noscript>        
+              </li>
+           </ul>
+        </div>
+     </div>
+  </div>
+</section>
+
+
+
+<section class="testimonails singleBigTestimonialSlider srx homeSingleBigTesti allCommontTesti">
+    <div class="container">
+       <div class="row">
+          <div class="col-12 alignItemsCenter flexFlowColMob flex justifyContentSpaceBetween">
+             <div class="homeContentWrapper">
+                <h2>  <span class="blueOrgangeGradient"> Short Note </span></h2>
+             </div>
+             <div class="flex arrowBottom">
+                <div class="sliderArrow">
+                   <a href="#" class="leftArrow">
+                      
+                   </a>
+                   <a href="#" class="rightArrow">
+                     
+                   </a>
+                </div>
+             </div>
+          </div>
+          <div class="col-12">
+             <div class="singleTestiBigSlider mt-60">
+                <div class="singleItemBigTestiSlider">
+                   <div class="col-12 col-md-10 p0">
+                      <img width="68" height="60" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2068%2060'%3E%3C/svg%3E" class="quoteLeft" alt="img" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/02/quoteLeft.svg"><noscript><img width="68" height="60" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/02/quoteLeft.svg" class="quoteLeft" alt="img"></noscript>
+                      <div class="testimonials_wrapper ">
+                         <ul class="testimonials_grid">
+                            <li class="testimonials_item">
+                               <div class="testi_content_wraper">
+                                  <div class="testi_detail_wraper">
+                                     <div class="alignItemsCenter flex flexFlowColMob imageTextWrapperTesti">
+                                        <!-- <div class="testi_image_wraper" style="
+                                           margin: 0px;
+                                           "><img width="74" height="74" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2074%2074'%3E%3C/svg%3E" class="testi_main_img" alt="img" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2016/11/sr1.jpg"><noscript><img width="74" height="74" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2016/11/sr1.jpg" class="testi_main_img" alt="img"></noscript></div> -->
+                                        <div class="testiWrapperMeta">
+                                           <p class="testi_name">  The_Aryan  </p>
+                                           <p class="testi_company">  Co Founder, Logistics Market  </p>
+                                        </div>
+                                     </div>
+                                     <p class="testi_text_info">Its a demo website ...<br> Nothing have to be shown and elaborate here but one day it will become more successful and will be having thousands of customers.</p>
+                                  </div>
+                               </div>
+                            </li>
+                         </ul>
+                      </div>
+                   </div>
+                </div>
+                
+                
+              
+              
+              
+ </section>
+
+
+
+<section class="logoSlider3 Section InContinue" style="overflow: hidden;">
+   <div class="container">
+      <div class="row">
+
+         <div class="col-12">
+<div class="homeContentWrapper">
+                <h2> How we’re hitting <span class="blueOrgangeGradient light"> headlines</span></h2>
+</div>
+
+<div class="logoContainer mt-xl">
+  <ul class="logoWrapperInBox">
+               <li> <img width="252" height="36" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20252%2036'%3E%3C/svg%3E" alt="img" style="max-width:126px" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-1.webp"><noscript><img width="252" height="36" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-1.webp" alt="img" style="max-width:126px"></noscript> </li>
+                <li> <img width="210" height="47" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20210%2047'%3E%3C/svg%3E" alt="img" style="max-width: 105px" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-2.webp"><noscript><img width="210" height="47" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-2.webp" alt="img" style="max-width: 105px"></noscript> </li>
+ <li> <img width="213" height="45" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20213%2045'%3E%3C/svg%3E" alt="img" style="max-width: 107px" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-3.webp"><noscript><img width="213" height="45" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-3.webp" alt="img" style="max-width: 107px"></noscript> </li>
+<li> <img width="254" height="56" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20254%2056'%3E%3C/svg%3E" alt="img" style="max-width: 127px" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-4.webp"><noscript><img width="254" height="56" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-4.webp" alt="img" style="max-width: 127px"></noscript> </li>
+                <li> <img width="132" height="37" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20132%2037'%3E%3C/svg%3E" alt="img" style="max-width: 66px" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-5.webp"><noscript><img width="132" height="37" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-5.webp" alt="img" style="max-width: 66px"></noscript> </li>       
+<li> <img width="269" height="31" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20269%2031'%3E%3C/svg%3E" alt="img" style="max-width: 135px" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-6.webp"><noscript><img width="269" height="31" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-6.webp" alt="img" style="max-width: 135px"></noscript> </li>
+                <li> <img width="255" height="30" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20255%2030'%3E%3C/svg%3E" alt="logo" style="max-width: 128px" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-7.webp"><noscript><img width="255" height="30" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-7.webp" alt="logo" style="max-width: 128px"></noscript> </li>
+ <li> <img width="255" height="36" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20255%2036'%3E%3C/svg%3E" alt="img" style="max-width: 128px" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-8.webp"><noscript><img width="255" height="36" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-8.webp" alt="img" style="max-width: 128px"></noscript> </li>     
+ <li> <img width="273" height="41" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20273%2041'%3E%3C/svg%3E" alt="img" style="max-width: 137px" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-9.webp"><noscript><img width="273" height="41" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-9.webp" alt="img" style="max-width: 137px"></noscript> </li>     
+ <li> <img width="147" height="57" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20147%2057'%3E%3C/svg%3E" alt="img" style="max-width: 120px" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-10.webp"><noscript><img width="147" height="57" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-10.webp" alt="img" style="max-width: 120px"></noscript> </li>     
+ <li> <img width="204" height="74" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20204%2074'%3E%3C/svg%3E" alt="img" style="max-width: 102px" data-lazy-src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-11.webp"><noscript><img width="204" height="74" decoding="async" src="//d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/news-logo-11.webp" alt="img" style="max-width: 102px"></noscript> </li>       
+            </ul>
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+
+<style> .logoWrapperInBox .slick-list .slick-track {max-height: 70px;flex-flow: nowrap;}#gradient-canvas {--gradient-color-1: #B5F6D4;--gradient-color-2: #F5CBBE;--gradient-color-3: #CDA2FC;--gradient-color-4: #FBF1F8;width: 100%;height: 100%;transform-origin: 0px 100%;transform: skewY(-3deg);position: absolute;top: auto;bottom: 0;overflow: hidden;}.homePageBannerSilder {position: relative;overflow: hidden;background: url(https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/home-bg-scaled-rv.webp);background-size: 100% 100%;background-repeat: no-repeat;}.testimonails.singleBigTestimonialSlider.srx {padding: 80px 0px !important;background: transparent !important;}.withMobAnddesktop .desk {display: block;}.withMobAnddesktop .mob {display: none;}.boxCarouselSection .withSlider .singleBox:not(:first-child) p {padding-right: 70px;}.boxCarouselSection .withSlider .singleBox .withMobAnddesktop .desk {height: 320px;width: auto;}.gradientInDesk {display: block;}.gradientInmob {display: none;}.homePageBannerSilder .headingText .blueOrgangeGradient {font-weight: 700 }.homePageBannerSilder .headingText {position: relative;z-index: 9999;width: auto;display: inline-block;}.homePageBannerSilder .headingText:before {content: '';position: absolute;width: 150%;height: 100%;background: #ffffff;z-index: -1;border-radius: 50%;filter: blur(80px);left: -35%;top: -25%;}@media (min-width: 767px) {.homeBannerSilder .bannerSlider {animation: animateTopToBottom2 40s linear infinite;}.homeBannerSilder .bannerSlider.bannerSliderSlow {animation: animateTopToBottom2 30s linear infinite;}@keyframes animateTopToBottom2 {0% {transform: translateY(0);}50% {transform: translateY(-100%);}100% {transform: translateY(0%);}}.mt-60 {margin-top: 50px;}.homelogoSection3.clienLogoSection.centerZigZagLineLogo .clienLogoWraper li {min-width: 110px !important;}.homelogoSection3.clienLogoSection.centerZigZagLineLogo .clienLogoWraper li img {max-width: 154px !important;}.boxGridSectionTwoCol .boxWrapperShipping .singleBox:first-child .imageWrapperBox img {max-height: 265px;}}@media (min-width: 1023px) {.boxGridSection .boxWrapperShipping .singleBox:first-child {padding-left: 80px;}}@media (max-width: 767px) { .homePageBannerSilder{background-size: 100% 95%;} .homeBannerSilder .bannerSlider {animation: animateLeftToRight2 36s linear infinite;}@keyframes animateLeftToRight2 {0% {transform: translateX(0);}50% {transform: translateX(-85%);}100% {transform: translateX(0%);}}.gridWrapper ul li h3 {max-width: 130px;}h3.newSize {font-size: 24px;line-height: 40px;}h3.newSize span {font-size: 30px;}.singleTestiBigSlider {margin-right: 0;}.blogModule.liteBg .contentWrapper .headingText {font-size: 48px;line-height: 60px;}.gradientInDesk, .homePageBannerSilder .headingText:before {display: none;}.gradientInmob {display: block;}.withMobAnddesktop .desk {display: none;}.withMobAnddesktop .mob {display: block;}.testimonails.singleBigTestimonialSlider.srx {padding: 65px 15px !important;background: transparent !important;}.boxCarouselSection .withSlider .singleBox:not(:first-child) p {padding-right: 0px;}.boxCarouselSection .withSlider .singleBox .withMobAnddesktop .mob {max-height: 300px;width: auto;}.boxCarouselSection .withSlider .singleBox .withMobAnddesktop.imageWrapperBox {width: 100%;max-height: 100%;max-width: 100%;min-width: 100%;min-height: 100%;align-items: center;}.testimonails.singleBigTestimonialSlider.srx .col-12.flex:before {width: 100%;height: 80%;}.homeContentWrapper span.light {display: block;}.boxCarouselSection .withSlider .singleBox .withMobAnddesktop.imageWrapperBox::before {background: transparent linear-gradient(153deg, #fffffd, #fff9dd) 0 0 no-repeat padding-box !important;}.bannerSlider .smallImageInmob {max-width: 150px !important;max-height: 190px !important;}.homeBannerSilder .bannerSlider .globwrapper img.globeImg {margin-top: -55px;max-width: 70px;}.homeBannerSilder .bannerSlider .whiteCardWithIcon {box-shadow: none !important;}.boxGridSection .boxWrapperShipping .singleBox .homeContentWrapper p {width: 90%;}.logoWrapperInBox {margin-top: 35px !important;}.clienLogoSection.darkTwoRowSliderVertical .clientTwoRowVerticalSlider {position: relative;z-index: 0;}.clienLogoSection.darkTwoRowSliderVertical .clientTwoRowVerticalSlider:before {content: '';position: absolute;width: 100%;height: 100%;background: transparent;z-index: 999;}}</style>
+
+<script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+ $(document).ready(function () {
+
+  const bannerSlider = document.querySelector('.bannerSlider');
+const bannerSliderSlow = document.querySelector('.bannerSliderSlow');
+
+bannerSlider.addEventListener('mouseenter', () => {
+  bannerSlider.style.animationPlayState = 'paused';
+  bannerSliderSlow.style.animationPlayState = 'paused';
+
+});
+
+bannerSlider.addEventListener('mouseleave', () => {
+  bannerSlider.style.animationPlayState = 'running';
+  bannerSliderSlow.style.animationPlayState = 'running';
+
+});
+
+bannerSliderSlow.addEventListener('mouseenter', () => {
+  bannerSliderSlow.style.animationPlayState = 'paused';
+  bannerSlider.style.animationPlayState = 'paused';
+
+});
+
+bannerSliderSlow.addEventListener('mouseleave', () => {
+  bannerSliderSlow.style.animationPlayState = 'running';
+  bannerSlider.style.animationPlayState = 'running';
+
+});
+
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+  const target = parseInt(counter.dataset.target);
+  const duration = parseInt(counter.dataset.duration);
+  let current = 0;
+
+  const updateCounter = () => {
+    const increment = target / duration * 10;
+    if (current < target) {
+      current += increment;
+      counter.textContent = Math.floor(current);
+      setTimeout(updateCounter, 10);
+    } else {
+      current = 0;
+      updateCounter();
+    }
+  };
+
+  updateCounter();
+});
+     
+
+  $('.logoWrapperInBox').slick({
+    slidesToShow: 5, // Number of slides to show at a time
+    slidesToScroll: 1, // Number of slides to scroll at a time
+    dots: false, // Disable navigation dots
+    arrows: false, // Hide navigation arrows
+    infinite: true, // Enable infinite scrolling
+    speed: 500, // Animation speed (adjust as needed)
+    swipeToSlide: true, // Enable swipe scrolling
+    autoplay: true, // Enable autoplay
+    autoplaySpeed: 0, // Autoplay interval in milliseconds (set to 0 for continuous sliding)
+    pauseOnHover: true,
+    speed: 4000, // Transition speed for autoplay (adjust as needed)
+    cssEase: 'linear', // Linear animation
+    responsive: [
+      {
+        breakpoint: 768, // Adjust the breakpoint as needed
+        settings: {
+          slidesToShow: 2 // Number of slides to show at this breakpoint
+        }
+      },
+      // Add more breakpoints as needed
+    ]
+  });
+
+
+      $('.clientTwoRowSlider').slick({
+        infinite: true,
+        rows: 2,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: true,
+        prevArrow: false,
+   		nextArrow: false,
+         autoplay: true,
+         autoplaySpeed: 1500,
+         responsive: [{
+				breakpoint: 767,
+				settings: {
+               rows: 1,
+					slidesToShow: 2,
+					slidesToScroll: 2,
+				}
+			}
+      ]
+      });
+
+      $('.clienLogoWraper').slick({
+    slidesToShow: 6, // Number of slides to show at a time
+    slidesToScroll: 1, // Number of slides to scroll at a time
+    dots: false, // Disable navigation dots
+    arrows: false, // Hide navigation arrows
+    infinite: true, // Enable infinite scrolling
+    speed: 500, // Animation speed (adjust as needed)
+    swipeToSlide: true, // Enable swipe scrolling
+    autoplay: true, // Enable autoplay
+    autoplaySpeed: 0, // Autoplay interval in milliseconds (set to 0 for continuous sliding)
+    pauseOnHover: true,
+    speed: 3000, // Transition speed for autoplay (adjust as needed)
+    cssEase: 'linear', // Linear animation
+    responsive: [
+      {
+        breakpoint: 768, // Adjust the breakpoint as needed
+        settings: {
+          slidesToShow: 3 // Number of slides to show at this breakpoint
+        }
+      },
+      // Add more breakpoints as needed
+    ]
+  });
+
+
+  $('.boxWrapperShipping.withSlider').slick({
+    infinite: false,
+    slidesToShow: 1.8,
+    slidesToScroll: 1,
+    dots: false,
+    prevArrow: '.boxCarouselSection .leftArrow',
+    nextArrow: '.boxCarouselSection .rightArrow',
+	  responsive: [{
+				breakpoint: 767,
+				settings: {
+					dots: true,
+               vertical: false,
+					slidesToShow: 1.1,
+					slidesToScroll: 1,
+				}
+			}
+      ]
+   
+});
+
+
+
+
+      $('.clitentSlideToTop').slick({
+         slidesToScroll: 1,
+         slidesToShow: 2,
+arrows: false,
+dots: false,
+vertical: true,
+center: true,
+verticalSwiping: true,
+autoplay: true,
+  autoplaySpeed: 0,
+  speed: 3000,
+  pauseOnHover: false,
+  cssEase: 'linear',
+  infinite: true,
+  centerMode: true,
+  responsive: [{
+				breakpoint: 767,
+				settings: {
+               vertical: false,
+					slidesToShow: 2,
+					slidesToScroll: 1,
+				}
+			}
+      ]
+      });
+
+      $('.clitentSlideToBottom').slick({
+         slidesToScroll: 1,
+         slidesToShow: 2,
+arrows: false,
+dots: false,
+vertical: true,
+verticalSwiping: true,
+autoplay: true,
+  autoplaySpeed: 0,
+  speed: 3000,
+  pauseOnHover: false,
+  cssEase: 'linear',
+  infinite: true,
+  centerMode: true,
+  responsive: [{
+				breakpoint: 767,
+				settings: {
+               vertical: false,
+					slidesToShow: 2,
+					slidesToScroll: 1,
+				}
+			}
+      ]
+});
+
+if (window.matchMedia('(max-width: 767px)').matches) { 
+
+$('.boxWrapperShipping.twoColWrapper').slick({
+        dots: true,
+        infinite: false,
+     centerMode: false,
+        slidesToShow: 1.1,
+        slidesToScroll: 1,
+        arrows: false,
+        autoplay: false,
+autoplaySpeed: 3000,
+speed: 1000,
+    });
+}
+
+
+if (window.matchMedia('(max-width: 767px)').matches) { 
+
+$('.masonryWrapper').slick({
+        dots: true,
+        infinite: false,
+     centerMode: false,
+        slidesToShow: 1.1,
+        slidesToScroll: 1,
+        arrows: false,
+        autoplay: false,
+autoplaySpeed: 3000,
+speed: 1000,
+    });
+}
+
+if (window.matchMedia('(max-width: 767px)').matches){
+    $('.tabWrapperFulfillment .tabContentWrapper').slick({
+			dots: true,
+			infinite: false,
+         centerMode: false,
+			slidesToShow: 1.1,
+			slidesToScroll: 1,
+			arrows: false,
+            autoplay: false,
+  autoplaySpeed: 3000,
+  speed: 1000,
+		});
+}
+
+if (window.matchMedia('(max-width: 767px)').matches) { 
+
+    $('.boxWrapperShipping').slick({
+			dots: true,
+			infinite: false,
+         centerMode: false,
+			slidesToShow: 1.1,
+			slidesToScroll: 1,
+			arrows: false,
+            autoplay: false,
+  autoplaySpeed: 3000,
+  speed: 1000,
+		});
+}
+
+     });
+
+
+if (window.matchMedia('(min-width: 767px)').matches) { 
+ const tabItems = document.querySelectorAll('.tabSingleItem');
+const tabImages = document.querySelectorAll('.tabImageWrapper img');
+let currentIndex = 0;
+
+function switchTab(index) {
+  tabItems.forEach(function(item) {
+    item.classList.remove('active');
+  });
+  tabImages.forEach(function(image) {
+    image.classList.remove('active');
+  });
+
+  tabItems[index].classList.add('active');
+  tabImages[index].classList.add('active');
+  currentIndex = index;
+}
+
+function autoSwitchTab() {
+  currentIndex = (currentIndex + 1) % tabItems.length;
+  switchTab(currentIndex);
+}
+
+tabItems.forEach(function(item, index) {
+  item.addEventListener('click', function() {
+    switchTab(index);
+  });
+});
+
+setInterval(autoSwitchTab, 4000);
+    } else{
+      
+        $(document).ready(function() {
+  var $tabSingleItems = $('.tabSingleItem');
+var $tabImages = $('.tabImageWrapper img');
+
+$tabSingleItems.each(function(index) {
+  var $tabSingleItem = $(this);
+  var $tabImage = $tabImages.eq(index);
+  
+  var $newImageWrapper = $('<div class="tabimageNew"></div>');
+  $newImageWrapper.append($tabImage.clone());
+  
+  $tabSingleItem.append($newImageWrapper);
+});
+
+$('.tabImageWrapper').remove();
+
+
+
+});
+
+    }
+});</script>
+
+<script type="rocketlazyloadscript">
+	try {
+//Converting colors to proper format
+function normalizeColor(hexCode) {
+    return [(hexCode >> 16 & 255) / 255, (hexCode >> 8 & 255) / 255, (255 & hexCode) / 255]
+  } ["SCREEN", "LINEAR_LIGHT"].reduce((hexCode, t, n) => Object.assign(hexCode, {
+    [t]: n
+  }), {});
+  
+  //Essential functionality of WebGl
+  //t = width
+  //n = height
+  class MiniGl {
+    constructor(canvas, width, height, debug = false) {
+        const _miniGl = this,
+            debug_output = -1 !== document.location.search.toLowerCase().indexOf("debug=webgl");
+        _miniGl.canvas = canvas, _miniGl.gl = _miniGl.canvas.getContext("webgl", {
+            antialias: true
+        }), _miniGl.meshes = [];
+        const context = _miniGl.gl;
+        width && height && this.setSize(width, height), _miniGl.lastDebugMsg, _miniGl.debug = debug && debug_output ? function(e) {
+            const t = new Date;
+            t - _miniGl.lastDebugMsg > 1e3 && console.log("---"), console.log(t.toLocaleTimeString() + Array(Math.max(0, 32 - e.length)).join(" ") + e + ": ", ...Array.from(arguments).slice(1)), _miniGl.lastDebugMsg = t
+        } : () => {}, Object.defineProperties(_miniGl, {
+            Material: {
+                enumerable: false,
+                value: class {
+                    constructor(vertexShaders, fragments, uniforms = {}) {
+                        const material = this;
+                        function getShaderByType(type, source) {
+                            const shader = context.createShader(type);
+                            return context.shaderSource(shader, source), context.compileShader(shader), context.getShaderParameter(shader, context.COMPILE_STATUS) || console.error(context.getShaderInfoLog(shader)), _miniGl.debug("Material.compileShaderSource", {
+                                source: source
+                            }), shader
+                        }
+                        function getUniformVariableDeclarations(uniforms, type) {
+                            return Object.entries(uniforms).map(([uniform, value]) => value.getDeclaration(uniform, type)).join("\n")
+                        }
+                        material.uniforms = uniforms, material.uniformInstances = [];
+  
+                        const prefix = "\n              precision highp float;\n            ";
+                        material.vertexSource = `\n              ${prefix}\n              attribute vec4 position;\n              attribute vec2 uv;\n              attribute vec2 uvNorm;\n              ${getUniformVariableDeclarations(_miniGl.commonUniforms,"vertex")}\n              ${getUniformVariableDeclarations(uniforms,"vertex")}\n              ${vertexShaders}\n            `,
+                        material.Source = `\n              ${prefix}\n              ${getUniformVariableDeclarations(_miniGl.commonUniforms,"fragment")}\n              ${getUniformVariableDeclarations(uniforms,"fragment")}\n              ${fragments}\n            `,
+                        material.vertexShader = getShaderByType(context.VERTEX_SHADER, material.vertexSource),
+                        material.fragmentShader = getShaderByType(context.FRAGMENT_SHADER, material.Source),
+                        material.program = context.createProgram(),
+                        context.attachShader(material.program, material.vertexShader),
+                        context.attachShader(material.program, material.fragmentShader),
+                        context.linkProgram(material.program),
+                        context.getProgramParameter(material.program, context.LINK_STATUS) || console.error(context.getProgramInfoLog(material.program)),
+                        context.useProgram(material.program),
+                        material.attachUniforms(void 0, _miniGl.commonUniforms),
+                        material.attachUniforms(void 0, material.uniforms)
+                    }
+                    //t = uniform
+                    attachUniforms(name, uniforms) {
+                        //n  = material
+                        const material = this;
+                        void 0 === name ? Object.entries(uniforms).forEach(([name, uniform]) => {
+                            material.attachUniforms(name, uniform)
+                        }) : "array" == uniforms.type ? uniforms.value.forEach((uniform, i) => material.attachUniforms(`${name}[${i}]`, uniform)) : "struct" == uniforms.type ? Object.entries(uniforms.value).forEach(([uniform, i]) => material.attachUniforms(`${name}.${uniform}`, i)) : (_miniGl.debug("Material.attachUniforms", {
+                            name: name,
+                            uniform: uniforms
+                        }), material.uniformInstances.push({
+                            uniform: uniforms,
+                            location: context.getUniformLocation(material.program, name)
+                        }))
+                    }
+                }
+            },
+            Uniform: {
+                enumerable: !1,
+                value: class {
+                    constructor(e) {
+                        this.type = "float", Object.assign(this, e);
+                        this.typeFn = {
+                            float: "1f",
+                            int: "1i",
+                            vec2: "2fv",
+                            vec3: "3fv",
+                            vec4: "4fv",
+                            mat4: "Matrix4fv"
+                        } [this.type] || "1f", this.update()
+                    }
+                    update(value) {
+                        void 0 !== this.value && context[`uniform${this.typeFn}`](value, 0 === this.typeFn.indexOf("Matrix") ? this.transpose : this.value, 0 === this.typeFn.indexOf("Matrix") ? this.value : null)
+                    }
+                    //e - name
+                    //t - type
+                    //n - length
+                    getDeclaration(name, type, length) {
+                        const uniform = this;
+                        if (uniform.excludeFrom !== type) {
+                            if ("array" === uniform.type) return uniform.value[0].getDeclaration(name, type, uniform.value.length) + `\nconst int ${name}_length = ${uniform.value.length};`;
+                            if ("struct" === uniform.type) {
+                                let name_no_prefix = name.replace("u_", "");
+                                return name_no_prefix = 
+                                  name_no_prefix.charAt(0).toUpperCase() + 
+                                  name_no_prefix.slice(1), 
+                                  `uniform struct ${name_no_prefix} 
+                                  {\n` + 
+                                  Object.entries(uniform.value).map(([name, uniform]) => 
+                                  uniform.getDeclaration(name, type)
+                                  .replace(/^uniform/, ""))
+                                  .join("") 
+                                  + `\n} ${name}${length>0?`[${length}]`:""};`
+                            }
+                            return `uniform ${uniform.type} ${name}${length>0?`[${length}]`:""};`
+                        }
+                    }
+                }
+            },
+            PlaneGeometry: {
+                enumerable: !1,
+                value: class {
+                    constructor(width, height, n, i, orientation) {
+                      context.createBuffer(), this.attributes = {
+                            position: new _miniGl.Attribute({
+                                target: context.ARRAY_BUFFER,
+                                size: 3
+                            }),
+                            uv: new _miniGl.Attribute({
+                                target: context.ARRAY_BUFFER,
+                                size: 2
+                            }),
+                            uvNorm: new _miniGl.Attribute({
+                                target: context.ARRAY_BUFFER,
+                                size: 2
+                            }),
+                            index: new _miniGl.Attribute({
+                                target: context.ELEMENT_ARRAY_BUFFER,
+                                size: 3,
+                                type: context.UNSIGNED_SHORT
+                            })
+                        }, this.setTopology(n, i), this.setSize(width, height, orientation)
+                    }
+                    setTopology(e = 1, t = 1) {
+                        const n = this;
+                        n.xSegCount = e, n.ySegCount = t, n.vertexCount = (n.xSegCount + 1) * (n.ySegCount + 1), n.quadCount = n.xSegCount * n.ySegCount * 2, n.attributes.uv.values = new Float32Array(2 * n.vertexCount), n.attributes.uvNorm.values = new Float32Array(2 * n.vertexCount), n.attributes.index.values = new Uint16Array(3 * n.quadCount);
+                        for (let e = 0; e <= n.ySegCount; e++)
+                            for (let t = 0; t <= n.xSegCount; t++) {
+                                const i = e * (n.xSegCount + 1) + t;
+                                if (n.attributes.uv.values[2 * i] = t / n.xSegCount, n.attributes.uv.values[2 * i + 1] = 1 - e / n.ySegCount, n.attributes.uvNorm.values[2 * i] = t / n.xSegCount * 2 - 1, n.attributes.uvNorm.values[2 * i + 1] = 1 - e / n.ySegCount * 2, t < n.xSegCount && e < n.ySegCount) {
+                                    const s = e * n.xSegCount + t;
+                                    n.attributes.index.values[6 * s] = i, n.attributes.index.values[6 * s + 1] = i + 1 + n.xSegCount, n.attributes.index.values[6 * s + 2] = i + 1, n.attributes.index.values[6 * s + 3] = i + 1, n.attributes.index.values[6 * s + 4] = i + 1 + n.xSegCount, n.attributes.index.values[6 * s + 5] = i + 2 + n.xSegCount
+                                }
+                            }
+                        n.attributes.uv.update(), n.attributes.uvNorm.update(), n.attributes.index.update(), _miniGl.debug("Geometry.setTopology", {
+                            uv: n.attributes.uv,
+                            uvNorm: n.attributes.uvNorm,
+                            index: n.attributes.index
+                        })
+                    }
+                    setSize(width = 1, height = 1, orientation = "xz") {
+                        const geometry = this;
+                        geometry.width = width,
+                        geometry.height = height,
+                        geometry.orientation = orientation,
+                        geometry.attributes.position.values && geometry.attributes.position.values.length === 3 * geometry.vertexCount 
+                        || (geometry.attributes.position.values = new Float32Array(3 * geometry.vertexCount));
+                        const o = width / -2,
+                            r = height / -2,
+                            segment_width = width / geometry.xSegCount,
+                            segment_height = height / geometry.ySegCount;
+                        for (let yIndex= 0; yIndex <= geometry.ySegCount; yIndex++) {
+                            const t = r + yIndex * segment_height;
+                            for (let xIndex = 0; xIndex <= geometry.xSegCount; xIndex++) {
+                                const r = o + xIndex * segment_width,
+                                    l = yIndex * (geometry.xSegCount + 1) + xIndex;
+                                geometry.attributes.position.values[3 * l + "xyz".indexOf(orientation[0])] = r, 
+                                geometry.attributes.position.values[3 * l + "xyz".indexOf(orientation[1])] = -t
+                            }
+                        }
+                        geometry.attributes.position.update(), _miniGl.debug("Geometry.setSize", {
+                            position: geometry.attributes.position
+                        })
+                    }
+                }
+            },
+            Mesh: {
+                enumerable: !1,
+                value: class {
+                    constructor(geometry, material) {
+                        const mesh = this;
+                        mesh.geometry = geometry, mesh.material = material, mesh.wireframe = !1, mesh.attributeInstances = [], Object.entries(mesh.geometry.attributes).forEach(([e, attribute]) => {
+                            mesh.attributeInstances.push({
+                                attribute: attribute,
+                                location: attribute.attach(e, mesh.material.program)
+                            })
+                        }), _miniGl.meshes.push(mesh), _miniGl.debug("Mesh.constructor", {
+                            mesh: mesh
+                        })
+                    }
+                    draw() {
+                      context.useProgram(this.material.program), this.material.uniformInstances.forEach(({
+                            uniform: e,
+                            location: t
+                        }) => e.update(t)), this.attributeInstances.forEach(({
+                            attribute: e,
+                            location: t
+                        }) => e.use(t)), context.drawElements(this.wireframe ? context.LINES : context.TRIANGLES, this.geometry.attributes.index.values.length, context.UNSIGNED_SHORT, 0)
+                    }
+                    remove() {
+                        _miniGl.meshes = _miniGl.meshes.filter(e => e != this)
+                    }
+                }
+            },
+            Attribute: {
+                enumerable: !1,
+                value: class {
+                    constructor(e) {
+                        this.type = context.FLOAT, this.normalized = !1, this.buffer = context.createBuffer(), Object.assign(this, e), this.update()
+                    }
+                    update() {
+                        void 0 !== this.values && (context.bindBuffer(this.target, this.buffer), context.bufferData(this.target, this.values, context.STATIC_DRAW))
+                    }
+                    attach(e, t) {
+                        const n = context.getAttribLocation(t, e);
+                        return this.target === context.ARRAY_BUFFER && (context.enableVertexAttribArray(n), context.vertexAttribPointer(n, this.size, this.type, this.normalized, 0, 0)), n
+                    }
+                    use(e) {
+                      context.bindBuffer(this.target, this.buffer), this.target === context.ARRAY_BUFFER && (context.enableVertexAttribArray(e), context.vertexAttribPointer(e, this.size, this.type, this.normalized, 0, 0))
+                    }
+                }
+            }
+        });
+        const a = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1];
+        _miniGl.commonUniforms = {
+            projectionMatrix: new _miniGl.Uniform({
+                type: "mat4",
+                value: a
+            }),
+            modelViewMatrix: new _miniGl.Uniform({
+                type: "mat4",
+                value: a
+            }),
+            resolution: new _miniGl.Uniform({
+                type: "vec2",
+                value: [1, 1]
+            }),
+            aspectRatio: new _miniGl.Uniform({
+                type: "float",
+                value: 1
+            })
+        }
+    }
+    setSize(e = 640, t = 480) {
+        this.width = e, this.height = t, this.canvas.width = e, this.canvas.height = t, this.gl.viewport(0, 0, e, t), this.commonUniforms.resolution.value = [e, t], this.commonUniforms.aspectRatio.value = e / t, this.debug("MiniGL.setSize", {
+            width: e,
+            height: t
+        })
+    }
+    //left, right, top, bottom, near, far
+    setOrthographicCamera(e = 0, t = 0, n = 0, i = -2e3, s = 2e3) {
+        this.commonUniforms.projectionMatrix.value = [2 / this.width, 0, 0, 0, 0, 2 / this.height, 0, 0, 0, 0, 2 / (i - s), 0, e, t, n, 1], this.debug("setOrthographicCamera", this.commonUniforms.projectionMatrix.value)
+    }
+    render() {
+        this.gl.clearColor(0, 0, 0, 0), this.gl.clearDepth(1), this.meshes.forEach(e => e.draw())
+    }
+  }
+  
+  
+  
+  //Sets initial properties
+  function e(object, propertyName, val) {
+    return propertyName in object ? Object.defineProperty(object, propertyName, {
+        value: val,
+        enumerable: !0,
+        configurable: !0,
+        writable: !0
+    }) : object[propertyName] = val, object
+  }
+  
+  //Gradient object
+  class Gradient {
+    constructor(...t) {
+        e(this, "el", void 0), e(this, "cssVarRetries", 0), e(this, "maxCssVarRetries", 200), e(this, "angle", 0), e(this, "isLoadedClass", !1), e(this, "isScrolling", !1), /*e(this, "isStatic", o.disableAmbientAnimations()),*/ e(this, "scrollingTimeout", void 0), e(this, "scrollingRefreshDelay", 200), e(this, "isIntersecting", !1), e(this, "shaderFiles", void 0), e(this, "vertexShader", void 0), e(this, "sectionColors", void 0), e(this, "computedCanvasStyle", void 0), e(this, "conf", void 0), e(this, "uniforms", void 0), e(this, "t", 1253106), e(this, "last", 0), e(this, "width", void 0), e(this, "minWidth", 1111), e(this, "height", 600), e(this, "xSegCount", void 0), e(this, "ySegCount", void 0), e(this, "mesh", void 0), e(this, "material", void 0), e(this, "geometry", void 0), e(this, "minigl", void 0), e(this, "scrollObserver", void 0), e(this, "amp", 320), e(this, "seed", 5), e(this, "freqX", 14e-5), e(this, "freqY", 29e-5), e(this, "freqDelta", 1e-5), e(this, "activeColors", [1, 1, 1, 1]), e(this, "isMetaKey", !1), e(this, "isGradientLegendVisible", !1), e(this, "isMouseDown", !1), e(this, "handleScroll", () => {
+            clearTimeout(this.scrollingTimeout), this.scrollingTimeout = setTimeout(this.handleScrollEnd, this.scrollingRefreshDelay), this.isGradientLegendVisible && this.hideGradientLegend(), this.conf.playing && (this.isScrolling = !0, this.pause())
+        }), e(this, "handleScrollEnd", () => {
+            this.isScrolling = !1, this.isIntersecting && this.play()
+        }), e(this, "resize", () => {
+            this.width = window.innerWidth, this.minigl.setSize(this.width, this.height), this.minigl.setOrthographicCamera(), this.xSegCount = Math.ceil(this.width * this.conf.density[0]), this.ySegCount = Math.ceil(this.height * this.conf.density[1]), this.mesh.geometry.setTopology(this.xSegCount, this.ySegCount), this.mesh.geometry.setSize(this.width, this.height), this.mesh.material.uniforms.u_shadow_power.value = this.width < 600 ? 5 : 6
+        }), e(this, "handleMouseDown", e => {
+            this.isGradientLegendVisible && (this.isMetaKey = e.metaKey, this.isMouseDown = !0, !1 === this.conf.playing && requestAnimationFrame(this.animate))
+        }), e(this, "handleMouseUp", () => {
+            this.isMouseDown = !1
+        }), e(this, "animate", e => {
+            if (!this.shouldSkipFrame(e) || this.isMouseDown) {
+                if (this.t += Math.min(e - this.last, 1e3 / 15), this.last = e, this.isMouseDown) {
+                    let e = 160;
+                    this.isMetaKey && (e = -160), this.t += e
+                }
+                this.mesh.material.uniforms.u_time.value = this.t, this.minigl.render()
+  
+            }
+            if (0 !== this.last && this.isStatic) return this.minigl.render(), void this.disconnect();
+            (/*this.isIntersecting && */this.conf.playing || this.isMouseDown) && requestAnimationFrame(this.animate)
+        }), e(this, "addIsLoadedClass", () => {
+            /*this.isIntersecting && */!this.isLoadedClass && (this.isLoadedClass = !0, this.el.classList.add("isLoaded"), setTimeout(() => {
+                this.el.parentElement.classList.add("isLoaded")
+            }, 3e3))
+        }), e(this, "pause", () => {
+            this.conf.playing = false
+        }), e(this, "play", () => {
+            requestAnimationFrame(this.animate), this.conf.playing = true
+        }), e(this,"initGradient", (selector) => {
+          this.el = document.querySelector(selector);
+          this.connect();
+          return this;
+        })
+    }
+    async connect() {
+        this.shaderFiles = {
+            vertex: "varying vec3 v_color;\n\nvoid main() {\n  float time = u_time * u_global.noiseSpeed;\n\n  vec2 noiseCoord = resolution * uvNorm * u_global.noiseFreq;\n\n  vec2 st = 1. - uvNorm.xy;\n\n  //\n  // Tilting the plane\n  //\n\n  // Front-to-back tilt\n  float tilt = resolution.y / 2.0 * uvNorm.y;\n\n  // Left-to-right angle\n  float incline = resolution.x * uvNorm.x / 2.0 * u_vertDeform.incline;\n\n  // Up-down shift to offset incline\n  float offset = resolution.x / 2.0 * u_vertDeform.incline * mix(u_vertDeform.offsetBottom, u_vertDeform.offsetTop, uv.y);\n\n  //\n  // Vertex noise\n  //\n\n  float noise = snoise(vec3(\n    noiseCoord.x * u_vertDeform.noiseFreq.x + time * u_vertDeform.noiseFlow,\n    noiseCoord.y * u_vertDeform.noiseFreq.y,\n    time * u_vertDeform.noiseSpeed + u_vertDeform.noiseSeed\n  )) * u_vertDeform.noiseAmp;\n\n  // Fade noise to zero at edges\n  noise *= 1.0 - pow(abs(uvNorm.y), 2.0);\n\n  // Clamp to 0\n  noise = max(0.0, noise);\n\n  vec3 pos = vec3(\n    position.x,\n    position.y + tilt + incline + noise - offset,\n    position.z\n  );\n\n  //\n  // Vertex color, to be passed to fragment shader\n  //\n\n  if (u_active_colors[0] == 1.) {\n    v_color = u_baseColor;\n  }\n\n  for (int i = 0; i < u_waveLayers_length; i++) {\n    if (u_active_colors[i + 1] == 1.) {\n      WaveLayers layer = u_waveLayers[i];\n\n      float noise = smoothstep(\n        layer.noiseFloor,\n        layer.noiseCeil,\n        snoise(vec3(\n          noiseCoord.x * layer.noiseFreq.x + time * layer.noiseFlow,\n          noiseCoord.y * layer.noiseFreq.y,\n          time * layer.noiseSpeed + layer.noiseSeed\n        )) / 2.0 + 0.5\n      );\n\n      v_color = blendNormal(v_color, layer.color, pow(noise, 4.));\n    }\n  }\n\n  //\n  // Finish\n  //\n\n  gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);\n}",
+            noise: "//\n// Description : Array and textureless GLSL 2D/3D/4D simplex\n//               noise functions.\n//      Author : Ian McEwan, Ashima Arts.\n//  Maintainer : stegu\n//     Lastmod : 20110822 (ijm)\n//     License : Copyright (C) 2011 Ashima Arts. All rights reserved.\n//               Distributed under the MIT License. See LICENSE file.\n//               https://github.com/ashima/webgl-noise\n//               https://github.com/stegu/webgl-noise\n//\n\nvec3 mod289(vec3 x) {\n  return x - floor(x * (1.0 / 289.0)) * 289.0;\n}\n\nvec4 mod289(vec4 x) {\n  return x - floor(x * (1.0 / 289.0)) * 289.0;\n}\n\nvec4 permute(vec4 x) {\n    return mod289(((x*34.0)+1.0)*x);\n}\n\nvec4 taylorInvSqrt(vec4 r)\n{\n  return 1.79284291400159 - 0.85373472095314 * r;\n}\n\nfloat snoise(vec3 v)\n{\n  const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;\n  const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);\n\n// First corner\n  vec3 i  = floor(v + dot(v, C.yyy) );\n  vec3 x0 =   v - i + dot(i, C.xxx) ;\n\n// Other corners\n  vec3 g = step(x0.yzx, x0.xyz);\n  vec3 l = 1.0 - g;\n  vec3 i1 = min( g.xyz, l.zxy );\n  vec3 i2 = max( g.xyz, l.zxy );\n\n  //   x0 = x0 - 0.0 + 0.0 * C.xxx;\n  //   x1 = x0 - i1  + 1.0 * C.xxx;\n  //   x2 = x0 - i2  + 2.0 * C.xxx;\n  //   x3 = x0 - 1.0 + 3.0 * C.xxx;\n  vec3 x1 = x0 - i1 + C.xxx;\n  vec3 x2 = x0 - i2 + C.yyy; // 2.0*C.x = 1/3 = C.y\n  vec3 x3 = x0 - D.yyy;      // -1.0+3.0*C.x = -0.5 = -D.y\n\n// Permutations\n  i = mod289(i);\n  vec4 p = permute( permute( permute(\n            i.z + vec4(0.0, i1.z, i2.z, 1.0 ))\n          + i.y + vec4(0.0, i1.y, i2.y, 1.0 ))\n          + i.x + vec4(0.0, i1.x, i2.x, 1.0 ));\n\n// Gradients: 7x7 points over a square, mapped onto an octahedron.\n// The ring size 17*17 = 289 is close to a multiple of 49 (49*6 = 294)\n  float n_ = 0.142857142857; // 1.0/7.0\n  vec3  ns = n_ * D.wyz - D.xzx;\n\n  vec4 j = p - 49.0 * floor(p * ns.z * ns.z);  //  mod(p,7*7)\n\n  vec4 x_ = floor(j * ns.z);\n  vec4 y_ = floor(j - 7.0 * x_ );    // mod(j,N)\n\n  vec4 x = x_ *ns.x + ns.yyyy;\n  vec4 y = y_ *ns.x + ns.yyyy;\n  vec4 h = 1.0 - abs(x) - abs(y);\n\n  vec4 b0 = vec4( x.xy, y.xy );\n  vec4 b1 = vec4( x.zw, y.zw );\n\n  //vec4 s0 = vec4(lessThan(b0,0.0))*2.0 - 1.0;\n  //vec4 s1 = vec4(lessThan(b1,0.0))*2.0 - 1.0;\n  vec4 s0 = floor(b0)*2.0 + 1.0;\n  vec4 s1 = floor(b1)*2.0 + 1.0;\n  vec4 sh = -step(h, vec4(0.0));\n\n  vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy ;\n  vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww ;\n\n  vec3 p0 = vec3(a0.xy,h.x);\n  vec3 p1 = vec3(a0.zw,h.y);\n  vec3 p2 = vec3(a1.xy,h.z);\n  vec3 p3 = vec3(a1.zw,h.w);\n\n//Normalise gradients\n  vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));\n  p0 *= norm.x;\n  p1 *= norm.y;\n  p2 *= norm.z;\n  p3 *= norm.w;\n\n// Mix final noise value\n  vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);\n  m = m * m;\n  return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1),\n                                dot(p2,x2), dot(p3,x3) ) );\n}",
+            blend: "//\n// https://github.com/jamieowen/glsl-blend\n//\n\n// Normal\n\nvec3 blendNormal(vec3 base, vec3 blend) {\n\treturn blend;\n}\n\nvec3 blendNormal(vec3 base, vec3 blend, float opacity) {\n\treturn (blendNormal(base, blend) * opacity + base * (1.0 - opacity));\n}\n\n// Screen\n\nfloat blendScreen(float base, float blend) {\n\treturn 1.0-((1.0-base)*(1.0-blend));\n}\n\nvec3 blendScreen(vec3 base, vec3 blend) {\n\treturn vec3(blendScreen(base.r,blend.r),blendScreen(base.g,blend.g),blendScreen(base.b,blend.b));\n}\n\nvec3 blendScreen(vec3 base, vec3 blend, float opacity) {\n\treturn (blendScreen(base, blend) * opacity + base * (1.0 - opacity));\n}\n\n// Multiply\n\nvec3 blendMultiply(vec3 base, vec3 blend) {\n\treturn base*blend;\n}\n\nvec3 blendMultiply(vec3 base, vec3 blend, float opacity) {\n\treturn (blendMultiply(base, blend) * opacity + base * (1.0 - opacity));\n}\n\n// Overlay\n\nfloat blendOverlay(float base, float blend) {\n\treturn base<0.5?(2.0*base*blend):(1.0-2.0*(1.0-base)*(1.0-blend));\n}\n\nvec3 blendOverlay(vec3 base, vec3 blend) {\n\treturn vec3(blendOverlay(base.r,blend.r),blendOverlay(base.g,blend.g),blendOverlay(base.b,blend.b));\n}\n\nvec3 blendOverlay(vec3 base, vec3 blend, float opacity) {\n\treturn (blendOverlay(base, blend) * opacity + base * (1.0 - opacity));\n}\n\n// Hard light\n\nvec3 blendHardLight(vec3 base, vec3 blend) {\n\treturn blendOverlay(blend,base);\n}\n\nvec3 blendHardLight(vec3 base, vec3 blend, float opacity) {\n\treturn (blendHardLight(base, blend) * opacity + base * (1.0 - opacity));\n}\n\n// Soft light\n\nfloat blendSoftLight(float base, float blend) {\n\treturn (blend<0.5)?(2.0*base*blend+base*base*(1.0-2.0*blend)):(sqrt(base)*(2.0*blend-1.0)+2.0*base*(1.0-blend));\n}\n\nvec3 blendSoftLight(vec3 base, vec3 blend) {\n\treturn vec3(blendSoftLight(base.r,blend.r),blendSoftLight(base.g,blend.g),blendSoftLight(base.b,blend.b));\n}\n\nvec3 blendSoftLight(vec3 base, vec3 blend, float opacity) {\n\treturn (blendSoftLight(base, blend) * opacity + base * (1.0 - opacity));\n}\n\n// Color dodge\n\nfloat blendColorDodge(float base, float blend) {\n\treturn (blend==1.0)?blend:min(base/(1.0-blend),1.0);\n}\n\nvec3 blendColorDodge(vec3 base, vec3 blend) {\n\treturn vec3(blendColorDodge(base.r,blend.r),blendColorDodge(base.g,blend.g),blendColorDodge(base.b,blend.b));\n}\n\nvec3 blendColorDodge(vec3 base, vec3 blend, float opacity) {\n\treturn (blendColorDodge(base, blend) * opacity + base * (1.0 - opacity));\n}\n\n// Color burn\n\nfloat blendColorBurn(float base, float blend) {\n\treturn (blend==0.0)?blend:max((1.0-((1.0-base)/blend)),0.0);\n}\n\nvec3 blendColorBurn(vec3 base, vec3 blend) {\n\treturn vec3(blendColorBurn(base.r,blend.r),blendColorBurn(base.g,blend.g),blendColorBurn(base.b,blend.b));\n}\n\nvec3 blendColorBurn(vec3 base, vec3 blend, float opacity) {\n\treturn (blendColorBurn(base, blend) * opacity + base * (1.0 - opacity));\n}\n\n// Vivid Light\n\nfloat blendVividLight(float base, float blend) {\n\treturn (blend<0.5)?blendColorBurn(base,(2.0*blend)):blendColorDodge(base,(2.0*(blend-0.5)));\n}\n\nvec3 blendVividLight(vec3 base, vec3 blend) {\n\treturn vec3(blendVividLight(base.r,blend.r),blendVividLight(base.g,blend.g),blendVividLight(base.b,blend.b));\n}\n\nvec3 blendVividLight(vec3 base, vec3 blend, float opacity) {\n\treturn (blendVividLight(base, blend) * opacity + base * (1.0 - opacity));\n}\n\n// Lighten\n\nfloat blendLighten(float base, float blend) {\n\treturn max(blend,base);\n}\n\nvec3 blendLighten(vec3 base, vec3 blend) {\n\treturn vec3(blendLighten(base.r,blend.r),blendLighten(base.g,blend.g),blendLighten(base.b,blend.b));\n}\n\nvec3 blendLighten(vec3 base, vec3 blend, float opacity) {\n\treturn (blendLighten(base, blend) * opacity + base * (1.0 - opacity));\n}\n\n// Linear burn\n\nfloat blendLinearBurn(float base, float blend) {\n\t// Note : Same implementation as BlendSubtractf\n\treturn max(base+blend-1.0,0.0);\n}\n\nvec3 blendLinearBurn(vec3 base, vec3 blend) {\n\t// Note : Same implementation as BlendSubtract\n\treturn max(base+blend-vec3(1.0),vec3(0.0));\n}\n\nvec3 blendLinearBurn(vec3 base, vec3 blend, float opacity) {\n\treturn (blendLinearBurn(base, blend) * opacity + base * (1.0 - opacity));\n}\n\n// Linear dodge\n\nfloat blendLinearDodge(float base, float blend) {\n\t// Note : Same implementation as BlendAddf\n\treturn min(base+blend,1.0);\n}\n\nvec3 blendLinearDodge(vec3 base, vec3 blend) {\n\t// Note : Same implementation as BlendAdd\n\treturn min(base+blend,vec3(1.0));\n}\n\nvec3 blendLinearDodge(vec3 base, vec3 blend, float opacity) {\n\treturn (blendLinearDodge(base, blend) * opacity + base * (1.0 - opacity));\n}\n\n// Linear light\n\nfloat blendLinearLight(float base, float blend) {\n\treturn blend<0.5?blendLinearBurn(base,(2.0*blend)):blendLinearDodge(base,(2.0*(blend-0.5)));\n}\n\nvec3 blendLinearLight(vec3 base, vec3 blend) {\n\treturn vec3(blendLinearLight(base.r,blend.r),blendLinearLight(base.g,blend.g),blendLinearLight(base.b,blend.b));\n}\n\nvec3 blendLinearLight(vec3 base, vec3 blend, float opacity) {\n\treturn (blendLinearLight(base, blend) * opacity + base * (1.0 - opacity));\n}",
+            fragment: "varying vec3 v_color;\n\nvoid main() {\n  vec3 color = v_color;\n  if (u_darken_top == 1.0) {\n    vec2 st = gl_FragCoord.xy/resolution.xy;\n    color.g -= pow(st.y + sin(-12.0) * st.x, u_shadow_power) * 0.4;\n  }\n  gl_FragColor = vec4(color, 1.0);\n}"
+        },
+        this.conf = {
+            presetName: "",
+            wireframe: false,
+            density: [.06, .16],
+            zoom: 1,
+            rotation: 0,
+            playing: true
+        }, 
+        document.querySelectorAll("canvas").length < 1 ? console.log("DID NOT LOAD HERO STRIPE CANVAS") : (
+          
+          this.minigl = new MiniGl(this.el, null, null, !0), 
+          requestAnimationFrame(() => {
+              this.el && (this.computedCanvasStyle = getComputedStyle(this.el), this.waitForCssVars())
+          })
+          /*
+          this.scrollObserver = await s.create(.1, !1),
+          this.scrollObserver.observe(this.el),
+          this.scrollObserver.onSeparate(() => {
+              window.removeEventListener("scroll", this.handleScroll), window.removeEventListener("mousedown", this.handleMouseDown), window.removeEventListener("mouseup", this.handleMouseUp), window.removeEventListener("keydown", this.handleKeyDown), this.isIntersecting = !1, this.conf.playing && this.pause()
+          }), 
+          this.scrollObserver.onIntersect(() => {
+              window.addEventListener("scroll", this.handleScroll), window.addEventListener("mousedown", this.handleMouseDown), window.addEventListener("mouseup", this.handleMouseUp), window.addEventListener("keydown", this.handleKeyDown), this.isIntersecting = !0, this.addIsLoadedClass(), this.play()
+          })*/
+  
+        )
+    }
+    disconnect() {
+        this.scrollObserver && (window.removeEventListener("scroll", this.handleScroll), window.removeEventListener("mousedown", this.handleMouseDown), window.removeEventListener("mouseup", this.handleMouseUp), window.removeEventListener("keydown", this.handleKeyDown), this.scrollObserver.disconnect()), window.removeEventListener("resize", this.resize)
+    }
+    initMaterial() {
+        this.uniforms = {
+            u_time: new this.minigl.Uniform({
+                value: 0
+            }),
+            u_shadow_power: new this.minigl.Uniform({
+                value: 10
+            }),
+            u_darken_top: new this.minigl.Uniform({
+                value: "" === this.el.dataset.jsDarkenTop ? 1 : 0
+            }),
+            u_active_colors: new this.minigl.Uniform({
+                value: this.activeColors,
+                type: "vec4"
+            }),
+            u_global: new this.minigl.Uniform({
+                value: {
+                    noiseFreq: new this.minigl.Uniform({
+                        value: [this.freqX, this.freqY],
+                        type: "vec2"
+                    }),
+                    noiseSpeed: new this.minigl.Uniform({
+                        value: 5e-6
+                    })
+                },
+                type: "struct"
+            }),
+            u_vertDeform: new this.minigl.Uniform({
+                value: {
+                    incline: new this.minigl.Uniform({
+                        value: Math.sin(this.angle) / Math.cos(this.angle)
+                    }),
+                    offsetTop: new this.minigl.Uniform({
+                        value: -.5
+                    }),
+                    offsetBottom: new this.minigl.Uniform({
+                        value: -.5
+                    }),
+                    noiseFreq: new this.minigl.Uniform({
+                        value: [3, 4],
+                        type: "vec2"
+                    }),
+                    noiseAmp: new this.minigl.Uniform({
+                        value: this.amp
+                    }),
+                    noiseSpeed: new this.minigl.Uniform({
+                        value: 10
+                    }),
+                    noiseFlow: new this.minigl.Uniform({
+                        value: 3
+                    }),
+                    noiseSeed: new this.minigl.Uniform({
+                        value: this.seed
+                    })
+                },
+                type: "struct",
+                excludeFrom: "fragment"
+            }),
+            u_baseColor: new this.minigl.Uniform({
+                value: this.sectionColors[0],
+                type: "vec3",
+                excludeFrom: "fragment"
+            }),
+            u_waveLayers: new this.minigl.Uniform({
+                value: [],
+                excludeFrom: "fragment",
+                type: "array"
+            })
+        };
+        for (let e = 1; e < this.sectionColors.length; e += 1) this.uniforms.u_waveLayers.value.push(new this.minigl.Uniform({
+            value: {
+                color: new this.minigl.Uniform({
+                    value: this.sectionColors[e],
+                    type: "vec3"
+                }),
+                noiseFreq: new this.minigl.Uniform({
+                    value: [2 + e / this.sectionColors.length, 3 + e / this.sectionColors.length],
+                    type: "vec2"
+                }),
+                noiseSpeed: new this.minigl.Uniform({
+                    value: 11 + .3 * e
+                }),
+                noiseFlow: new this.minigl.Uniform({
+                    value: 6.5 + .3 * e
+                }),
+                noiseSeed: new this.minigl.Uniform({
+                    value: this.seed + 10 * e
+                }),
+                noiseFloor: new this.minigl.Uniform({
+                    value: .1
+                }),
+                noiseCeil: new this.minigl.Uniform({
+                    value: .63 + .07 * e
+                })
+            },
+            type: "struct"
+        }));
+        return this.vertexShader = [this.shaderFiles.noise, this.shaderFiles.blend, this.shaderFiles.vertex].join("\n\n"), new this.minigl.Material(this.vertexShader, this.shaderFiles.fragment, this.uniforms)
+    }
+    initMesh() {
+        this.material = this.initMaterial(), this.geometry = new this.minigl.PlaneGeometry, this.mesh = new this.minigl.Mesh(this.geometry, this.material)
+    }
+    shouldSkipFrame(e) {
+        return !!window.document.hidden || (!this.conf.playing || (parseInt(e, 10) % 2 == 0 || void 0))
+    }
+    updateFrequency(e) {
+        this.freqX += e, this.freqY += e
+    }
+    toggleColor(index) {
+        this.activeColors[index] = 0 === this.activeColors[index] ? 1 : 0
+    }
+    showGradientLegend() {
+        this.width > this.minWidth && (this.isGradientLegendVisible = !0, document.body.classList.add("isGradientLegendVisible"))
+    }
+    hideGradientLegend() {
+        this.isGradientLegendVisible = !1, document.body.classList.remove("isGradientLegendVisible")
+    }
+    init() {
+        this.initGradientColors(), this.initMesh(), this.resize(), requestAnimationFrame(this.animate), window.addEventListener("resize", this.resize)
+    }
+    /*
+    * Waiting for the css variables to become available, usually on page load before we can continue.
+    * Using default colors assigned below if no variables have been found after maxCssVarRetries
+    */
+    waitForCssVars() {
+        if (this.computedCanvasStyle && -1 !== this.computedCanvasStyle.getPropertyValue("--gradient-color-1").indexOf("#")) this.init(), this.addIsLoadedClass();
+        else {
+            if (this.cssVarRetries += 1, this.cssVarRetries > this.maxCssVarRetries) {
+                return this.sectionColors = [16711680, 16711680, 16711935, 65280, 255],void this.init();
+            }
+            requestAnimationFrame(() => this.waitForCssVars())
+        }
+    }
+    /*
+    * Initializes the four section colors by retrieving them from css variables.
+    */
+    initGradientColors() {
+        this.sectionColors = ["--gradient-color-1", "--gradient-color-2", "--gradient-color-3", "--gradient-color-4"].map(cssPropertyName => {
+            let hex = this.computedCanvasStyle.getPropertyValue(cssPropertyName).trim();
+            //Check if shorthand hex value was used and double the length so the conversion in normalizeColor will work.
+            if (4 === hex.length) {
+                const hexTemp = hex.substr(1).split("").map(hexTemp => hexTemp + hexTemp).join("");
+                hex = `#${hexTemp}`
+            }
+            return hex && `0x${hex.substr(1)}`
+        }).filter(Boolean).map(normalizeColor)
+    }
+  }
+		
+		   var gradient = new Gradient()
+            gradient.initGradient('#gradient-canvas');
+		
+		
+		} catch (err) {
+//console.log(err);
+ 
+}
+  </script>
+
+
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7FQTZ6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+   jQuery(function($) {
+     $(".button-light-blue, ul#main_menu li a, .whiteBtn, .blueBtn, .linkBtn").addClass("link-click");
+	   
+	 function getUserPlatformInCF() {
+	 var userAgent = navigator.userAgent.toLowerCase();
+
+	  if (userAgent.match(/android/)) {
+		return 'mweb';
+	  } else if (userAgent.match(/iphone|ipad|ipod/)) {
+		return 'mweb';
+	  } else if (userAgent.match(/mobile|android|iphone|ipad|ipod/)) {
+		return 'mweb';
+	  } else {
+		return 'web';
+	  }
+	}	
+
+	var userPlatform = getUserPlatformInCF();
+     var referrer = document.referrer;
+     var pathname = document.location.pathname;
+     var searchParams = new URLSearchParams(document.location.search);
+     var UTM = {};
+   
+     function setCookie(cname, cvalue, exdays) {
+       var d = new Date();
+       d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+       var expires = "expires=" + d.toUTCString();
+       cvalue = cvalue == 'null' ? '' : cvalue;
+       document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/" + "";
+     }
+   
+     function getParsedCookie(val) {
+       return val ? JSON.parse(decodeURIComponent(val)) : {};
+     }
+   
+     function getCookie(cname) {
+       var name = cname + "=";
+       var ca = document.cookie.split(';');
+       for (var i = 0; i < ca.length; i++) {
+         var c = ca[i];
+         while (c.charAt(0) == ' ') {
+           c = c.substring(1);
+         }
+         if (c.indexOf(name) == 0) {
+           return c.substring(name.length, c.length);
+         }
+       }
+       return "";
+     }
+   
+     function setFirstUTM() {
+       setCookie("first_utm", JSON.stringify(getParsedCookie(getCookie("UTM"))), 30);
+     }
+   
+     if (!getCookie("first_utm") && getCookie("UTM")) {
+       setFirstUTM();
+     }
+   
+     var parsedUtm = getParsedCookie(getCookie("UTM"));
+     if (!getCookie("UTM")) {
+       UTM["pathname"] = pathname;
+       UTM["referrer"] = referrer;
+     } else {
+       UTM["pathname"] = parsedUtm["pathname"];
+       UTM["referrer"] = parsedUtm["referrer"];
+     }
+   
+     var paramsKeys = ['utm_source', 'utm_campaign', 'utm_content', 'utm_medium', 'utm_term'];
+     for (var i = 0; i < paramsKeys.length; i++) {
+       var key = paramsKeys[i];
+       if (searchParams.get(key)) {
+         UTM[key] = searchParams.get(key);
+       } else if (getCookie("UTM")) {
+         var parsedUTMData = parsedUtm;
+         if (parsedUTMData[key]) {
+           UTM[key] = parsedUtm[key];
+         }
+       }
+     }
+   
+     setCookie("UTM", JSON.stringify(UTM), 30);
+     if (!getCookie("first_utm") && getCookie("UTM")) {
+       setFirstUTM();
+     }
+   
+     function getParams() {
+       var params = "";
+       if ('utm_source' in window.location.search) {
+         params = window.location.search + '&pathname=' + getCookie('pathname') + '&referrer=' + getCookie('referrer');
+       } else {
+         params = "?pathname=" + getCookie('pathname') + '&referrer=' + getCookie('referrer') + '&utm_source=' + getCookie('utm_source') + '&utm_campaign=' + getCookie('utm_campaign') + '&utm_content=' + getCookie('utm_content') + '&utm_term=' + getCookie('utm_term');
+       }
+       return params;
+     }
+   
+     function checkCookie() {
+       var med = getCookie("utm_medium");
+       var comp = getCookie("utm_campaign");
+       var source = getCookie("utm_source");
+       $('.signup-home').click(function() {
+         var href = $(this).attr('href');
+         var button_text = $(this).text();
+         webengage.track("Clicked on CTA", {
+           referrer: referrer,
+           "utm_source": source,
+           "utm_medium": med,
+           "utm_campaign": comp,
+           cta_text: button_text,
+           destination_url: href
+         });
+       });
+     }
+   
+     window.onload = checkCookie;
+   
+     $('.link-click').click(function() {
+       var href = $(this).attr('href');
+       var button_text = $(this).text();
+       webengage.track("Clicked on Link", {
+         cta_text: button_text,
+         destination_url: href
+       });
+     });
+   
+     $('.Get_Ref_code').click(function() {
+       var href = $(this).attr('href');
+       var button_text = "Get_Ref_code";
+       webengage.track("Get_Ref_code", {
+         cta_text: button_text,
+         destination_url: href
+       });
+     });
+   
+     function readCookieInForm(name) {
+       var nameEQ = name + "=";
+       var ca = document.cookie.split(';');
+       for (var i = 0; i < ca.length; i++) {
+         var c = ca[i];
+         while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+       }
+       return null;
+     }
+   
+    var getUTMs = JSON.parse(readCookieInForm('UTM'));
+	var first_referrer = (getUTMs.referrer);
+	var pathname = (getUTMs.pathname);
+	   console.log(pathname);
+    $('input[name=utm_source]').val(getUTMs?.utm_source || '');
+    $('input[name=utm_medium]').val(getUTMs?.utm_medium || '');
+    $('input[name=utm_campaign]').val(getUTMs?.utm_campaign || '');
+    $('input[name=utm_term]').val(getUTMs?.utm_term || '');
+    $('input[name=utm_content]').val(getUTMs?.utm_content || '');
+    $('input[name=utm_link]').val(location.href);
+	$('input[name=utm_referrer]').val(referrer);
+	$('input[name=first_referrer]').val(first_referrer);
+	$('input[name=pathname]').val(pathname);
+	$('input[name=device]').val(userPlatform);
+   });
+});</script>
+
+<script type="rocketlazyloadscript" id='_webengage_script_tag' data-rocket-type='text/javascript'>
+   var webengage;!function(w,e,b,n,g){function o(e,t){e[t[t.length-1]]=function(){r.__queue.push([t.join("."),
+   arguments])}}var i,s,r=w[b],z=" ",l="init options track screen onReady".split(z),a="feedback survey notification".split(z),c="options render clear abort".split(z),p="Open Close Submit Complete View Click".split(z),u="identify login logout setAttribute".split(z);if(!r||!r.__v){for(w[b]=r={__queue:[],__v:"6.0",user:{}},i=0;i < l.length;i++)o(r,[l[i]]);for(i=0;i < a.length;i++){for(r[a[i]]={},s=0;s < c.length;s++)o(r[a[i]],[a[i],c[s]]);for(s=0;s < p.length;s++)o(r[a[i]],[a[i],"on"+p[s]])}for(i=0;i < u.length;i++)o(r.user,["user",u[i]]);setTimeout(function(){var f=e.createElement("script"),d=e.getElementById("_webengage_script_tag");f.type="text/javascript",f.async=!0,f.src=("https:"==e.location.protocol?"https://ssl.widgets.webengage.com":"http://cdn.widgets.webengage.com")+"/js/webengage-min-v-6.0.js",d.parentNode.insertBefore(f,d)})}}(window,document,"webengage");webengage.init("aa131c7a");
+</script>
+
+
+        <script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.toc li a').forEach(function(li) {
+                li.innerHTML = li.innerHTML.split('&nbsp;').join(' ').replace(/\s+/g, ' ');
+            });
+            jQuery('#srtocToggleLabel').click(function(e) {
+                e.preventDefault();
+                jQuery('.srtoc ol.toc').slideToggle('fast', function() {
+                    if (jQuery('#srtocToggleLabel').text() == 'show') {
+                        jQuery('#srtocToggleLabel').text('hide');
+                    } else {
+                        jQuery('#srtocToggleLabel').text('show');
+                    }
+                });
+            });
+        });</script>
+            <script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {
+			var timeoutSearchInput = null;
+
+            jQuery('input#searchInput').keyup( function(event) {
+// 				if (event.which <= 90 && event.which >= 48) {
+					clearTimeout(timeoutSearchInput);
+
+					jQuery('#searchResults').html('');
+
+					if ( this.value.length <= 2 || this.value == '' ) {
+						jQuery('#searchResults').hide();
+						jQuery('#searchLoader').hide();
+						jQuery('#searchResults').html('');
+					}
+
+					if( this.value.length < 3 ) return;
+					
+					jQuery('#searchLoader').show();
+					timeoutSearchInput = setTimeout(function () {
+						jQuery.ajax({
+							
+							type: 'post',
+							data: {
+								action: 'search_fetch',
+								keyword: jQuery('input#searchInput').val(),
+								postType: (typeof jQuery('input[name="post_type"]').val() !== "undefined") ? jQuery('input[name="post_type"]').val() : '',
+							},
+							success: function( data ) {
+								jQuery('#searchResults').show();
+								jQuery('#searchResults').html( data );
+								jQuery('#searchLoader').hide();
+							}
+						});
+					}, 1000);	
+// 				}
+			});
+        });</script>
+    <script type="rocketlazyloadscript" data-rocket-src='https://d2kh7o38xye1vj.cloudfront.net/wp-content/plugins/data-tables-generator-by-supsystic/app/assets/js/dtgsnonce.js?ver=0.01' id='dtgs_nonce_frontend-js' defer></script>
+<script type="rocketlazyloadscript" id="dtgs_nonce_frontend-js-after">
+var DTGS_NONCE_FRONTEND = "7dd44ec23b"
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src='https://d2kh7o38xye1vj.cloudfront.net/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=1700476213' id='swv-js' defer></script>
+
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src='https://d2kh7o38xye1vj.cloudfront.net/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1700476213' id='contact-form-7-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src='https://d2kh7o38xye1vj.cloudfront.net/wp-content/cache/min/1/wp-content/plugins/sr-utm/js/script.js?ver=1700476213' id='sr_utm_utm_cf7_script-js' defer></script>
+<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+
+<script type="rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/themes/shiprocket/assets/js/scripts.min.js?ver=1.0.3" id="shiprocket-custom-theme-scripts-min-js" defer></script>
+
+<script src="{% static 'basic.js' %}"></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>
+</body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
