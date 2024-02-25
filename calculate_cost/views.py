@@ -302,16 +302,14 @@ def calculate_cost(request):
     amount=request.GET.get('amount')
     # l=request.GET.get('L')
     # print(pickup)
-    if(pickup not in dict.keys() or delivery not in dict.keys()):
+    if(pickup not in dict or delivery not in dict):
         print("Enter Valid pincode")
         messages.info(request,'Enter Valid pincode!')
         return render(request,'calculate_cost.html')
     else:
         print("Valid",pickup)
         # messages.info(request,'From')
-        messages.info(request,[dict[pickup][0],dict[pickup][1]])
-        # messages.info(request,'To')
-        messages.info(request,[dict[delivery][0],dict[delivery][1]])
+        
         lat1=radians(dict[pickup][2])
         lon1=radians(dict[pickup][3])
         lat2=radians(dict[delivery][2])
@@ -324,6 +322,12 @@ def calculate_cost(request):
         print('lat',type(lat1),type(lat2),type(lon1),type(lon2))
         dis=int(distance(request,lat1,lat2,lon1,lon2))
         rate=cost(request,dis,int(weight))
+        if(int(weight)>3000):
+            messages.info(request,'Standard price! Plz Fill the Contact form to contact us')
+            return redirect('contact')
+        messages.info(request,[dict[pickup][0],dict[pickup][1]])
+        # messages.info(request,'To')
+        messages.info(request,[dict[delivery][0],dict[delivery][1]])
         print('dis',dis,weight,type(weight))
         # messages.info(request,dis)
         return render(request,'calculate_cost.html',{'result':rate})
