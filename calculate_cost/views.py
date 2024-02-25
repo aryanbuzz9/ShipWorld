@@ -1,26 +1,46 @@
 from django.shortcuts import render,redirect
-import pandas as pd
+#import pandas as pd
 from math import sin, cos, sqrt, atan2, radians
 from django.contrib import messages
 
+from . import pincode
+#df=pd.read_csv('pincode1.csv')
 
-df=pd.read_csv('pincode1.csv')
-
-df=df.drop_duplicates(subset=['Pincode'],keep='first')
-i=[i for i in range(18185)]
+# df=df.drop_duplicates(subset=['Pincode'],keep='first')
+# i=[i for i in range(18185)]
 index=[i for i in range(18185)]
-i=pd.Index(i)
-df.dropna(inplace=True)
-df.set_index(i,inplace=True)
-#print(df)
-# print(len(df['Pincode']))
-dict={}
+# i=pd.Index(i)
+# df.dropna(inplace=True)
+# df.set_index(i,inplace=True)
+# #print(df)
+# # print(len(df['Pincode']))
+# dict={}
 
-print(len(df))
+# #print(len(df))
+
+# # Importing required module
+# from geopy.geocoders import Nominatim
+
+# # Using Nominatim Api
+# geolocator = Nominatim(user_agent="geoapiExercises")
+
+# # Zipcode input
+# zipcode = "452010"
+# # Using geocode()
+# location = geolocator.geocode(zipcode)
+# t=geolocator.geocode("Indore")
+# print('ttttttt',t.latitude)
+# # Displaying address details
+# print("Zipcode:",zipcode)
+# print("Details of the Zipcode:")
+# print('Location',location)
+# print('typeee',location[1][:6])
+
 # #print(452010 in df['Pincode'])
-for i in index:
-    dict[str(df.iloc[i][4])]=[df.iloc[i][7],df.iloc[i][8],float(str(df.iloc[i][9])[:6]),float(str(df.iloc[i][10])[:5])]
-print('452010' in dict)
+dict=pincode.dict
+# for i in index:
+#     dict[str(df.iloc[i][4])]=[df.iloc[i][7],df.iloc[i][8],float(str(df.iloc[i][9])[:6]),float(str(df.iloc[i][10])[:5])]
+#print('452010','452010.0' in pincode.dict)
 # Create your views here.
 # print(dict['452010'])
 def cost(request,dis,weight):
