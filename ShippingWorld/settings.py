@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-zn9x=^o(n&f!za3zw-q%@+$auk3lyi43mkr2rfja_ql6zm^0f+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ship-world.vercel.app']
+ALLOWED_HOSTS = ['ship-world.vercel.app','ship-world-2iby01shy-pushpendra-singhs-projects-d622dba7.vercel.app']
 
 
 # Application definition
